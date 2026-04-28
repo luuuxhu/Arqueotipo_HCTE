@@ -1,0 +1,60 @@
+archetype (adl_version=1.4; uid=d3bbe993-71b6-4215-b96f-493e7291c41d)
+	openEHR-EHR-CLUSTER.datos_paciente.v0
+
+concept
+	[at0000]
+
+language
+	original_language = <[ISO_639-1::es]>
+
+description
+	original_author = <
+		["date"] = <"2026-04-28">
+	>
+	lifecycle_state = <"unmanaged">
+	details = <
+		["es"] = <
+			language = <[ISO_639-1::es]>
+		>
+	>
+	other_details = <
+		["licence"] = <"This work is licensed under the Creative Commons Attribution-ShareAlike 4.0 International License. To view a copy of this license, visit http://creativecommons.org/licenses/by-sa/4.0/.">
+		["custodian_organisation"] = <"openEHR Foundation">
+		["original_namespace"] = <"org.openehr">
+		["original_publisher"] = <"openEHR Foundation">
+		["custodian_namespace"] = <"org.openehr">
+		["MD5-CAM-1.0.1"] = <"c492babe69799fdc57021fe0a1989be9">
+		["build_uid"] = <"a586b415-3bf0-3341-91f8-803c1575b858">
+	>
+
+definition
+	CLUSTER[at0000] matches {    -- Datos del paciente
+		items cardinality matches {1..*; unordered} matches {
+			ELEMENT[at0001] matches {    -- id_paciente
+				value matches {
+					DV_TEXT matches {*}
+				}
+			}
+			ELEMENT[at0002] occurrences matches {0..1} matches {*}    -- nombre_completo
+		}
+	}
+
+ontology
+	term_definitions = <
+		["es"] = <
+			items = <
+				["at0000"] = <
+					text = <"Datos del paciente">
+					description = <"Información demográfica básica del paciente (reutilizable)">
+				>
+				["at0001"] = <
+					text = <"id_paciente">
+					description = <"Identificador único del paciente">
+				>
+				["at0002"] = <
+					text = <"nombre_completo">
+					description = <"Nombre completo del paciente">
+				>
+			>
+		>
+	>

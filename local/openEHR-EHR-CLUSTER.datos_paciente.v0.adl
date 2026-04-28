@@ -23,7 +23,7 @@ description
 		["original_namespace"] = <"org.openehr">
 		["original_publisher"] = <"openEHR Foundation">
 		["custodian_namespace"] = <"org.openehr">
-		["MD5-CAM-1.0.1"] = <"099ace0f766b948d3f97e7c72057fe1e">
+		["MD5-CAM-1.0.1"] = <"ea42a7db3f16cd3360eafddca1ab40f9">
 		["build_uid"] = <"a586b415-3bf0-3341-91f8-803c1575b858">
 	>
 
@@ -35,12 +35,12 @@ definition
 					DV_IDENTIFIER matches {*}
 				}
 			}
-			ELEMENT[at0002] occurrences matches {0..1} matches {    -- Nombre_paciente
+			ELEMENT[at0002] occurrences matches {0..1} matches {    -- NombreCompleto
 				value matches {
 					DV_TEXT matches {*}
 				}
 			}
-			ELEMENT[at0001] occurrences matches {0..1} matches {    -- Fecha_nacimiento
+			ELEMENT[at0001] occurrences matches {0..1} matches {    -- FechaNacimiento
 				value matches {
 					DV_DATE matches {
 						value matches {yyyy-mm-dd}
@@ -59,11 +59,11 @@ ontology
 					description = <"datos_paciente">
 				>
 				["at0001"] = <
-					text = <"Fecha_nacimiento">
+					text = <"FechaNacimiento">
 					description = <"">
 				>
 				["at0002"] = <
-					text = <"Nombre_paciente">
+					text = <"NombreCompleto">
 					description = <"">
 				>
 				["at0003"] = <

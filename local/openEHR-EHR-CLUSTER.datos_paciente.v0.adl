@@ -23,7 +23,7 @@ description
 		["original_namespace"] = <"org.openehr">
 		["original_publisher"] = <"openEHR Foundation">
 		["custodian_namespace"] = <"org.openehr">
-		["MD5-CAM-1.0.1"] = <"e815cebe1a8b2693f6f59fa54ce9ce89">
+		["MD5-CAM-1.0.1"] = <"831abe5fcab49fd65861ed678649ee30">
 		["build_uid"] = <"a586b415-3bf0-3341-91f8-803c1575b858">
 	>
 
@@ -47,6 +47,14 @@ definition
 					}
 				}
 			}
+			ELEMENT[at0008] matches {    -- Sexo
+				value matches {
+					DV_CODED_TEXT matches {*}
+				}
+				name matches {
+					DV_CODED_TEXT matches {*}
+				}
+			}
 		}
 	}
 
@@ -68,6 +76,10 @@ ontology
 				>
 				["at0003"] = <
 					text = <"ID_paciente">
+					description = <"">
+				>
+				["at0008"] = <
+					text = <"Sexo">
 					description = <"">
 				>
 			>

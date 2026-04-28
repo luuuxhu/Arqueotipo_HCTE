@@ -1,0 +1,115 @@
+archetype (adl_version=1.4; uid=e9161cf4-a4e9-4c06-9df4-7d735a762dc3)
+	openEHR-EHR-COMPOSITION.contexto_quirurgico.v0
+
+concept
+	[at0000]
+
+language
+	original_language = <[ISO_639-1::es]>
+
+description
+	original_author = <
+		["date"] = <"2026-04-28">
+	>
+	lifecycle_state = <"unmanaged">
+	details = <
+		["es"] = <
+			language = <[ISO_639-1::es]>
+		>
+	>
+	other_details = <
+		["licence"] = <"This work is licensed under the Creative Commons Attribution-ShareAlike 4.0 International License. To view a copy of this license, visit http://creativecommons.org/licenses/by-sa/4.0/.">
+		["custodian_organisation"] = <"openEHR Foundation">
+		["original_namespace"] = <"org.openehr">
+		["original_publisher"] = <"openEHR Foundation">
+		["custodian_namespace"] = <"org.openehr">
+		["MD5-CAM-1.0.1"] = <"a75854332ff25333f3fd5040a1fa7a16">
+		["build_uid"] = <"732681e6-7376-309f-9f67-922386b2bfd2">
+	>
+
+definition
+	COMPOSITION[at0000] matches {    -- contexto_quirurgico
+		category matches {
+			DV_CODED_TEXT matches {
+				defining_code matches {
+					[openehr::433]
+				}
+			}
+		}
+		context matches {
+			EVENT_CONTEXT matches {
+				other_context matches {
+					ITEM_TREE[at0001] matches {    -- Item tree
+						items cardinality matches {0..*; unordered} matches {
+							allow_archetype CLUSTER[at0002] occurrences matches {0..*} matches {    -- episodio_lca
+								include
+									archetype_id/value matches {/openEHR-EHR-CLUSTER\.episodio_lca\.v0/}
+							}
+							allow_archetype CLUSTER[at0003] occurrences matches {0..*} matches {    -- datos_paciente
+								include
+									archetype_id/value matches {/openEHR-EHR-CLUSTER\.datos_paciente\.v0/}
+							}
+						}
+					}
+				}
+			}
+		}
+		content cardinality matches {1..*; unordered} matches {
+			SECTION[at0004] occurrences matches {0..1} matches {    -- procedimiento_quirurgico
+				items cardinality matches {1..*; unordered} matches {
+					allow_archetype ACTION[at0005] occurrences matches {0..*} matches {    -- reconstruccion_lca
+						include
+							archetype_id/value matches {/.*/}
+					}
+					allow_archetype OBSERVATION[at0006] occurrences matches {0..*} matches {    -- lesiones_asociadas
+						include
+							archetype_id/value matches {/.*/}
+					}
+					allow_archetype EVALUATION[at0007] occurrences matches {0..*} matches {    -- protocolo_rehabilitacion
+						include
+							archetype_id/value matches {/.*/}
+					}
+				}
+			}
+		}
+	}
+
+ontology
+	term_definitions = <
+		["es"] = <
+			items = <
+				["at0000"] = <
+					text = <"contexto_quirurgico">
+					description = <"contexto_quirurgico">
+				>
+				["at0001"] = <
+					text = <"Item tree">
+					description = <"@ internal @">
+				>
+				["at0002"] = <
+					text = <"episodio_lca">
+					description = <"">
+				>
+				["at0003"] = <
+					text = <"datos_paciente">
+					description = <"">
+				>
+				["at0004"] = <
+					text = <"procedimiento_quirurgico">
+					description = <"">
+				>
+				["at0005"] = <
+					text = <"reconstruccion_lca">
+					description = <"">
+				>
+				["at0006"] = <
+					text = <"lesiones_asociadas">
+					description = <"">
+				>
+				["at0007"] = <
+					text = <"protocolo_rehabilitacion">
+					description = <"">
+				>
+			>
+		>
+	>

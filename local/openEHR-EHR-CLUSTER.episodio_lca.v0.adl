@@ -1,0 +1,43 @@
+archetype (adl_version=1.4; uid=e4c10fc4-c2ad-4f2f-bac8-50c788088672)
+	openEHR-EHR-CLUSTER.episodio_lca.v0
+
+concept
+	[at0000]
+
+language
+	original_language = <[ISO_639-1::es]>
+
+description
+	original_author = <
+		["date"] = <"2026-04-28">
+	>
+	lifecycle_state = <"unmanaged">
+	details = <
+		["es"] = <
+			language = <[ISO_639-1::es]>
+		>
+	>
+	other_details = <
+		["licence"] = <"This work is licensed under the Creative Commons Attribution-ShareAlike 4.0 International License. To view a copy of this license, visit http://creativecommons.org/licenses/by-sa/4.0/.">
+		["custodian_organisation"] = <"openEHR Foundation">
+		["original_namespace"] = <"org.openehr">
+		["original_publisher"] = <"openEHR Foundation">
+		["custodian_namespace"] = <"org.openehr">
+		["MD5-CAM-1.0.1"] = <"9169a35708ba4c1f63c7091c0688ed4a">
+		["build_uid"] = <"062b7392-60cd-3b6c-a1de-621d17067c72">
+	>
+
+definition
+	CLUSTER[at0000] matches {*}    -- episodio_lca
+
+ontology
+	term_definitions = <
+		["es"] = <
+			items = <
+				["at0000"] = <
+					text = <"episodio_lca">
+					description = <"episodio_lca">
+				>
+			>
+		>
+	>

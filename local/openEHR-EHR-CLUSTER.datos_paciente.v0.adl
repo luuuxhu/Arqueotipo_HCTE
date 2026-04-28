@@ -23,24 +23,24 @@ description
 		["original_namespace"] = <"org.openehr">
 		["original_publisher"] = <"openEHR Foundation">
 		["custodian_namespace"] = <"org.openehr">
-		["MD5-CAM-1.0.1"] = <"ea42a7db3f16cd3360eafddca1ab40f9">
+		["MD5-CAM-1.0.1"] = <"e815cebe1a8b2693f6f59fa54ce9ce89">
 		["build_uid"] = <"a586b415-3bf0-3341-91f8-803c1575b858">
 	>
 
 definition
 	CLUSTER[at0000] matches {    -- datos_paciente
 		items cardinality matches {1..*; unordered} matches {
-			ELEMENT[at0003] occurrences matches {0..1} matches {    -- ID_paciente
+			ELEMENT[at0003] matches {    -- ID_paciente
 				value matches {
 					DV_IDENTIFIER matches {*}
 				}
 			}
-			ELEMENT[at0002] occurrences matches {0..1} matches {    -- NombreCompleto
+			ELEMENT[at0002] matches {    -- NombreCompleto
 				value matches {
 					DV_TEXT matches {*}
 				}
 			}
-			ELEMENT[at0001] occurrences matches {0..1} matches {    -- FechaNacimiento
+			ELEMENT[at0001] matches {    -- FechaNacimiento
 				value matches {
 					DV_DATE matches {
 						value matches {yyyy-mm-dd}

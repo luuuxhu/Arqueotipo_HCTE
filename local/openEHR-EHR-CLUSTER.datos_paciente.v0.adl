@@ -23,12 +23,22 @@ description
 		["original_namespace"] = <"org.openehr">
 		["original_publisher"] = <"openEHR Foundation">
 		["custodian_namespace"] = <"org.openehr">
-		["MD5-CAM-1.0.1"] = <"c11a4da1814dbf9ce3ae3d0f2d4ccc1a">
+		["MD5-CAM-1.0.1"] = <"0c8582c0a037c7280cb7f52b5afeee88">
 		["build_uid"] = <"a586b415-3bf0-3341-91f8-803c1575b858">
 	>
 
 definition
-	CLUSTER[at0000] matches {*}    -- datos_paciente
+	CLUSTER[at0000] matches {    -- datos_paciente
+		items cardinality matches {1..*; unordered} matches {
+			ELEMENT[at0001] occurrences matches {0..1} matches {    -- Fecha_nacimiento
+				value matches {
+					DV_DATE matches {
+						value matches {yyyy-mm-dd}
+					}
+				}
+			}
+		}
+	}
 
 ontology
 	term_definitions = <
@@ -37,6 +47,10 @@ ontology
 				["at0000"] = <
 					text = <"datos_paciente">
 					description = <"datos_paciente">
+				>
+				["at0001"] = <
+					text = <"Fecha_nacimiento">
+					description = <"">
 				>
 			>
 		>

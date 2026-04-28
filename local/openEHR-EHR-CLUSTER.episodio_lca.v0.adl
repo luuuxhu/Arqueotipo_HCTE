@@ -23,7 +23,7 @@ description
 		["original_namespace"] = <"org.openehr">
 		["original_publisher"] = <"openEHR Foundation">
 		["custodian_namespace"] = <"org.openehr">
-		["MD5-CAM-1.0.1"] = <"131a0c61369b7ee2c6ca597fc31401c2">
+		["MD5-CAM-1.0.1"] = <"ce0422a083858310d8c951ad842e314e">
 		["build_uid"] = <"062b7392-60cd-3b6c-a1de-621d17067c72">
 	>
 
@@ -32,7 +32,7 @@ definition
 		items cardinality matches {1..*; unordered} matches {
 			ELEMENT[at0001] matches {    -- id_episodio
 				value matches {
-					DV_TEXT matches {*}
+					DV_IDENTIFIER matches {*}
 				}
 			}
 			ELEMENT[at0002] matches {    -- fecha_cirugia

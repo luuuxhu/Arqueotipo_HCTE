@@ -25,8 +25,8 @@ description
 		["original_namespace"] = <"org.openehr">
 		["original_publisher"] = <"openEHR Foundation">
 		["custodian_namespace"] = <"org.openehr">
+		["MD5-CAM-1.0.1"] = <"7c963b4bedd747378362760935a24035">
 		["build_uid"] = <"8eb312a6-f589-395f-baa4-17f24a02e3c5">
-		["MD5-CAM-1.0.1"] = <"693b80d84a4b85b75ad130f5d739adf8">
 	>
 
 definition
@@ -81,6 +81,9 @@ definition
 				}
 			}
 		}
+		protocol matches {
+			ITEM_TREE[at0008] matches {*}    -- Item tree
+		}
 	}
 
 ontology
@@ -118,6 +121,10 @@ ontology
 				["at0007"] = <
 					text = <"Comentarios adicionales">
 					description = <"Observaciones adicionales sobre el dolor o la inflamación">
+				>
+				["at0008"] = <
+					text = <"Item tree">
+					description = <"@ internal @">
 				>
 			>
 		>

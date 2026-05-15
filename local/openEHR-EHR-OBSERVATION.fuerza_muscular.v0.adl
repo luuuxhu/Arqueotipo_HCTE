@@ -26,7 +26,7 @@ description
 		["original_namespace"] = <"org.openehr">
 		["original_publisher"] = <"openEHR Foundation">
 		["custodian_namespace"] = <"org.openehr">
-		["MD5-CAM-1.0.1"] = <"a97f208f481e88e80315e3407295440e">
+		["MD5-CAM-1.0.1"] = <"cf5f59907a98f776e53f2e0dcbcf226b">
 		["build_uid"] = <"c346df1a-9897-3bfb-a4ce-f4e8352f3696">
 	>
 
@@ -59,9 +59,26 @@ definition
 												list = <
 													["1"] = <
 														units = <"kg">
+														precision = <|1|>
 													>
 													["2"] = <
-														units = <"nm">
+														units = <"N.m">
+													>
+												>
+											>
+										}
+									}
+									ELEMENT[at0055] occurrences matches {0..1} matches {    -- Fuerza lado sano
+										value matches {
+											C_DV_QUANTITY <
+												
+												list = <
+													["1"] = <
+														units = <"N.m">
+														precision = <|1|>
+													>
+													["2"] = <
+														units = <"kg">
 													>
 												>
 											>
@@ -75,6 +92,7 @@ definition
 													["1"] = <
 														units = <"%">
 														magnitude = <|0.0..100.0|>
+														precision = <|1|>
 													>
 												>
 											>
@@ -107,9 +125,20 @@ definition
 							DV_CODED_TEXT matches {
 								defining_code matches {
 									[local::
-									at0035,    -- Traumatólogo
-									at0036,    -- Médico rehabilitador
-									at0037]    -- Fisioterapeuta
+									at0049,    -- Fisioterapeuta
+									at0050]    -- Médico rehabilitador
+								}
+							}
+						}
+					}
+					ELEMENT[at0051] occurrences matches {0..1} matches {    -- Tipo de dinamómetro
+						value matches {
+							DV_CODED_TEXT matches {
+								defining_code matches {
+									[local::
+									at0052,    -- Dinamómetro isocinético (Biodex)
+									at0053,    -- Dinamómetro manual (HHD)
+									at0054]    -- No instrumentado
 								}
 							}
 						}
@@ -145,18 +174,6 @@ ontology
 				>
 				["at0034"] = <
 					text = <"Profesional">
-					description = <"">
-				>
-				["at0035"] = <
-					text = <"Traumatólogo">
-					description = <"">
-				>
-				["at0036"] = <
-					text = <"Médico rehabilitador">
-					description = <"">
-				>
-				["at0037"] = <
-					text = <"Fisioterapeuta">
 					description = <"">
 				>
 				["at0038"] = <
@@ -201,6 +218,34 @@ ontology
 				>
 				["at0048"] = <
 					text = <"Test funcional">
+					description = <"">
+				>
+				["at0049"] = <
+					text = <"Fisioterapeuta">
+					description = <"">
+				>
+				["at0050"] = <
+					text = <"Médico rehabilitador">
+					description = <"">
+				>
+				["at0051"] = <
+					text = <"Tipo de dinamómetro">
+					description = <"">
+				>
+				["at0052"] = <
+					text = <"Dinamómetro isocinético (Biodex)">
+					description = <"">
+				>
+				["at0053"] = <
+					text = <"Dinamómetro manual (HHD)">
+					description = <"">
+				>
+				["at0054"] = <
+					text = <"No instrumentado">
+					description = <"">
+				>
+				["at0055"] = <
+					text = <"Fuerza lado sano">
 					description = <"">
 				>
 			>

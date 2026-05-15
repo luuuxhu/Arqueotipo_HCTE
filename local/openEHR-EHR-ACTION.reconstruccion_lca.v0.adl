@@ -1,0 +1,43 @@
+archetype (adl_version=1.4; uid=5f0fc71b-8453-40c1-948a-413f02f6913f)
+	openEHR-EHR-ACTION.reconstruccion_lca.v0
+
+concept
+	[at0000]
+
+language
+	original_language = <[ISO_639-1::es]>
+
+description
+	original_author = <
+		["date"] = <"2026-05-15">
+	>
+	lifecycle_state = <"unmanaged">
+	details = <
+		["es"] = <
+			language = <[ISO_639-1::es]>
+		>
+	>
+	other_details = <
+		["licence"] = <"This work is licensed under the Creative Commons Attribution-ShareAlike 4.0 International License. To view a copy of this license, visit http://creativecommons.org/licenses/by-sa/4.0/.">
+		["custodian_organisation"] = <"openEHR Foundation">
+		["original_namespace"] = <"org.openehr">
+		["original_publisher"] = <"openEHR Foundation">
+		["custodian_namespace"] = <"org.openehr">
+		["MD5-CAM-1.0.1"] = <"aec958353a74b1d7ec72fab330e0072a">
+		["build_uid"] = <"c2ef1409-2a31-334e-93cc-9131d3db37dc">
+	>
+
+definition
+	ACTION[at0000] matches {*}    -- Reconstruccion_lca
+
+ontology
+	term_definitions = <
+		["es"] = <
+			items = <
+				["at0000"] = <
+					text = <"Reconstruccion_lca">
+					description = <"Reconstruccion_lca">
+				>
+			>
+		>
+	>

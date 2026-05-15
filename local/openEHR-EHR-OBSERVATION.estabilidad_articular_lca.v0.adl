@@ -26,7 +26,7 @@ description
 		["original_namespace"] = <"org.openehr">
 		["original_publisher"] = <"openEHR Foundation">
 		["custodian_namespace"] = <"org.openehr">
-		["MD5-CAM-1.0.1"] = <"56aa9596fe1a7b7a1d42942b32761c1a">
+		["MD5-CAM-1.0.1"] = <"9420e5cb4ee3f84375e27f02e49a4847">
 		["build_uid"] = <"c346df1a-9897-3bfb-a4ce-f4e8352f3696">
 	>
 
@@ -39,59 +39,17 @@ definition
 						data matches {
 							ITEM_TREE[at0003] matches {    -- Tree
 								items cardinality matches {0..*; unordered} matches {
-									ELEMENT[at0004] matches {    -- Flexión activa
-										value matches {
-											C_DV_QUANTITY <
-												property = <[openehr::497]>
-												list = <
-													["1"] = <
-														units = <"deg">
-														magnitude = <|0.0..180.0|>
-													>
-												>
-											>
-										}
-									}
-									ELEMENT[at0005] matches {    -- Extensión activa
-										value matches {
-											C_DV_QUANTITY <
-												property = <[openehr::497]>
-												list = <
-													["1"] = <
-														units = <"deg">
-														magnitude = <|-10.0..10.0|>
-													>
-												>
-											>
-										}
-									}
-									ELEMENT[at0006] occurrences matches {0..1} matches {    -- Déficit de extensión
-										value matches {
-											C_DV_QUANTITY <
-												property = <[openehr::497]>
-												list = <
-													["1"] = <
-														units = <"deg">
-														magnitude = <|0.0..20.0|>
-													>
-												>
-											>
-										}
-									}
-									ELEMENT[at0007] matches {    -- Lateralidad
+									ELEMENT[at0015] occurrences matches {0..1} matches {    -- Test de Lachman
 										value matches {
 											DV_CODED_TEXT matches {
 												defining_code matches {
 													[local::
-													at0008,    -- Izquierda
-													at0009]    -- Derecha
+													at0024,    -- Negativo
+													at0025,    -- Grado I
+													at0026,    -- Grado II
+													at0027]    -- Grado III
 												}
 											}
-										}
-									}
-									ELEMENT[at0010] occurrences matches {0..1} matches {    -- Comentarios
-										value matches {
-											DV_TEXT matches {*}
 										}
 									}
 								}
@@ -102,21 +60,7 @@ definition
 			}
 		}
 		protocol matches {
-			ITEM_TREE[at0011] matches {    -- Item tree
-				items cardinality matches {0..*; unordered} matches {
-					ELEMENT[at0012] occurrences matches {0..1} matches {    -- Tipo de medición
-						value matches {
-							DV_CODED_TEXT matches {
-								defining_code matches {
-									[local::
-									at0013,    -- Activa
-									at0014]    -- Pasiva
-								}
-							}
-						}
-					}
-				}
-			}
+			ITEM_TREE[at0011] matches {*}    -- Item tree
 		}
 	}
 
@@ -140,49 +84,29 @@ ontology
 					text = <"Tree">
 					description = <"@ internal @">
 				>
-				["at0004"] = <
-					text = <"Flexión activa">
-					description = <"Grados de flexión activa de la rodilla. Valor normal: 135-140°. Objetivo en rehabilitación LCA: ≥125°">
-				>
-				["at0005"] = <
-					text = <"Extensión activa">
-					description = <"Grados de extensión activa de la rodilla. 0° = extensión completa. Valores negativos indican hiperextensión. Objetivo: 0°">
-				>
-				["at0006"] = <
-					text = <"Déficit de extensión">
-					description = <"Diferencia en grados respecto a la extensión completa (0°). Un déficit de 5° significa que el paciente solo extiende hasta 5°. Se calcula automáticamente o se mide directamente.">
-				>
-				["at0007"] = <
-					text = <"Lateralidad">
-					description = <"Indica si la medición corresponde a la rodilla izquierda o derecha">
-				>
-				["at0008"] = <
-					text = <"Izquierda">
-					description = <"Rodilla izquierda">
-				>
-				["at0009"] = <
-					text = <"Derecha">
-					description = <"Rodilla derecha">
-				>
-				["at0010"] = <
-					text = <"Comentarios">
-					description = <"Observaciones adicionales sobre la medición del rango de movimiento">
-				>
 				["at0011"] = <
 					text = <"Item tree">
 					description = <"@ internal @">
 				>
-				["at0012"] = <
-					text = <"Tipo de medición">
-					description = <"Indica si la medición fue activa (movimiento del paciente) o pasiva (movilización por el fisioterapeuta)">
+				["at0015"] = <
+					text = <"Test de Lachman">
+					description = <"Resultado del test de Lachman expresado según la clasificación estándar de laxitud ligamentaria">
 				>
-				["at0013"] = <
-					text = <"Activa">
-					description = <"Movimiento realizado por el paciente">
+				["at0024"] = <
+					text = <"Negativo">
+					description = <"Sin evidencia de laxitud anterior">
 				>
-				["at0014"] = <
-					text = <"Pasiva">
-					description = <"Movilización realizada por el fisioterapeuta">
+				["at0025"] = <
+					text = <"Grado I">
+					description = <"Laxitud leve">
+				>
+				["at0026"] = <
+					text = <"Grado II">
+					description = <"Laxitud moderada">
+				>
+				["at0027"] = <
+					text = <"Grado III">
+					description = <"Laxitud severa">
 				>
 			>
 		>

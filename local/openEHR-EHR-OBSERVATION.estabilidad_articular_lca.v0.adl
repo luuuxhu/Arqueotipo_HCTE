@@ -1,0 +1,189 @@
+archetype (adl_version=1.4; uid=a421a941-a0e8-4032-bddd-89f187715931)
+	openEHR-EHR-OBSERVATION.estabilidad_articular_lca.v0
+
+concept
+	[at0000]
+
+language
+	original_language = <[ISO_639-1::es]>
+
+description
+	original_author = <
+		["date"] = <"2026-05-15">
+		["organisation"] = <"UPM">
+	>
+	lifecycle_state = <"in_development">
+	details = <
+		["es"] = <
+			language = <[ISO_639-1::es]>
+			purpose = <"Registrar el rango de movimiento activo y pasivo de la rodilla durante las sesiones de rehabilitación post-reconstrucción de LCA. Permite evaluar la progresión de la movilidad comparando con el lado contralateral sano.">
+			use = <"Para fisioterapeutas en cada sesión de rehabilitación y para traumatólogos en revisiones clínicas. Se mide la flexión (objetivo ≥125°) y la extensión (objetivo 0° completa) de forma activa principalmente.">
+		>
+	>
+	other_details = <
+		["licence"] = <"This work is licensed under the Creative Commons Attribution-ShareAlike 4.0 International License. To view a copy of this license, visit http://creativecommons.org/licenses/by-sa/4.0/.">
+		["custodian_organisation"] = <"openEHR Foundation">
+		["original_namespace"] = <"org.openehr">
+		["original_publisher"] = <"openEHR Foundation">
+		["custodian_namespace"] = <"org.openehr">
+		["MD5-CAM-1.0.1"] = <"56aa9596fe1a7b7a1d42942b32761c1a">
+		["build_uid"] = <"c346df1a-9897-3bfb-a4ce-f4e8352f3696">
+	>
+
+definition
+	OBSERVATION[at0000] matches {    -- estabilidad_articular_lca
+		data matches {
+			HISTORY[at0001] matches {    -- History
+				events cardinality matches {1..*; unordered} matches {
+					EVENT[at0002] occurrences matches {0..*} matches {    -- Any event
+						data matches {
+							ITEM_TREE[at0003] matches {    -- Tree
+								items cardinality matches {0..*; unordered} matches {
+									ELEMENT[at0004] matches {    -- Flexión activa
+										value matches {
+											C_DV_QUANTITY <
+												property = <[openehr::497]>
+												list = <
+													["1"] = <
+														units = <"deg">
+														magnitude = <|0.0..180.0|>
+													>
+												>
+											>
+										}
+									}
+									ELEMENT[at0005] matches {    -- Extensión activa
+										value matches {
+											C_DV_QUANTITY <
+												property = <[openehr::497]>
+												list = <
+													["1"] = <
+														units = <"deg">
+														magnitude = <|-10.0..10.0|>
+													>
+												>
+											>
+										}
+									}
+									ELEMENT[at0006] occurrences matches {0..1} matches {    -- Déficit de extensión
+										value matches {
+											C_DV_QUANTITY <
+												property = <[openehr::497]>
+												list = <
+													["1"] = <
+														units = <"deg">
+														magnitude = <|0.0..20.0|>
+													>
+												>
+											>
+										}
+									}
+									ELEMENT[at0007] matches {    -- Lateralidad
+										value matches {
+											DV_CODED_TEXT matches {
+												defining_code matches {
+													[local::
+													at0008,    -- Izquierda
+													at0009]    -- Derecha
+												}
+											}
+										}
+									}
+									ELEMENT[at0010] occurrences matches {0..1} matches {    -- Comentarios
+										value matches {
+											DV_TEXT matches {*}
+										}
+									}
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+		protocol matches {
+			ITEM_TREE[at0011] matches {    -- Item tree
+				items cardinality matches {0..*; unordered} matches {
+					ELEMENT[at0012] occurrences matches {0..1} matches {    -- Tipo de medición
+						value matches {
+							DV_CODED_TEXT matches {
+								defining_code matches {
+									[local::
+									at0013,    -- Activa
+									at0014]    -- Pasiva
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+
+ontology
+	term_definitions = <
+		["es"] = <
+			items = <
+				["at0000"] = <
+					text = <"estabilidad_articular_lca">
+					description = <"range_of_motion_rodilla_lca">
+				>
+				["at0001"] = <
+					text = <"History">
+					description = <"@ internal @">
+				>
+				["at0002"] = <
+					text = <"Any event">
+					description = <"@ internal @">
+				>
+				["at0003"] = <
+					text = <"Tree">
+					description = <"@ internal @">
+				>
+				["at0004"] = <
+					text = <"Flexión activa">
+					description = <"Grados de flexión activa de la rodilla. Valor normal: 135-140°. Objetivo en rehabilitación LCA: ≥125°">
+				>
+				["at0005"] = <
+					text = <"Extensión activa">
+					description = <"Grados de extensión activa de la rodilla. 0° = extensión completa. Valores negativos indican hiperextensión. Objetivo: 0°">
+				>
+				["at0006"] = <
+					text = <"Déficit de extensión">
+					description = <"Diferencia en grados respecto a la extensión completa (0°). Un déficit de 5° significa que el paciente solo extiende hasta 5°. Se calcula automáticamente o se mide directamente.">
+				>
+				["at0007"] = <
+					text = <"Lateralidad">
+					description = <"Indica si la medición corresponde a la rodilla izquierda o derecha">
+				>
+				["at0008"] = <
+					text = <"Izquierda">
+					description = <"Rodilla izquierda">
+				>
+				["at0009"] = <
+					text = <"Derecha">
+					description = <"Rodilla derecha">
+				>
+				["at0010"] = <
+					text = <"Comentarios">
+					description = <"Observaciones adicionales sobre la medición del rango de movimiento">
+				>
+				["at0011"] = <
+					text = <"Item tree">
+					description = <"@ internal @">
+				>
+				["at0012"] = <
+					text = <"Tipo de medición">
+					description = <"Indica si la medición fue activa (movimiento del paciente) o pasiva (movilización por el fisioterapeuta)">
+				>
+				["at0013"] = <
+					text = <"Activa">
+					description = <"Movimiento realizado por el paciente">
+				>
+				["at0014"] = <
+					text = <"Pasiva">
+					description = <"Movilización realizada por el fisioterapeuta">
+				>
+			>
+		>
+	>

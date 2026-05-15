@@ -26,7 +26,7 @@ description
 		["original_namespace"] = <"org.openehr">
 		["original_publisher"] = <"openEHR Foundation">
 		["custodian_namespace"] = <"org.openehr">
-		["MD5-CAM-1.0.1"] = <"37bc4272e1471103f629b58db53091c0">
+		["MD5-CAM-1.0.1"] = <"6bb895d1429aa5ab4992f52239dde2b7">
 		["build_uid"] = <"c346df1a-9897-3bfb-a4ce-f4e8352f3696">
 	>
 
@@ -63,6 +63,11 @@ definition
 													at0032]    -- Gross
 												}
 											}
+										}
+									}
+									ELEMENT[at0033] occurrences matches {0..1} matches {    -- Observaciones clínicas
+										value matches {
+											DV_TEXT matches {*}
 										}
 									}
 								}
@@ -123,7 +128,7 @@ ontology
 				>
 				["at0028"] = <
 					text = <"Test Pivot Shift">
-					description = <"">
+					description = <"Evaluación clínica de la estabilidad rotacional de la rodilla tras reconstrucción del LCA.">
 				>
 				["at0029"] = <
 					text = <"Negativo">
@@ -140,6 +145,10 @@ ontology
 				["at0032"] = <
 					text = <"Gross">
 					description = <"Inestabilidad rotacional severa">
+				>
+				["at0033"] = <
+					text = <"Observaciones clínicas">
+					description = <"">
 				>
 			>
 		>

@@ -1,0 +1,140 @@
+archetype (adl_version=1.4; uid=2a44442c-e00e-4e6b-825a-e3eb889e628c)
+	openEHR-EHR-COMPOSITION.sesion_rehabilitacion_lca.v1
+
+concept
+	[at0000]
+
+language
+	original_language = <[ISO_639-1::es]>
+
+description
+	original_author = <
+		["date"] = <"2026-05-15">
+	>
+	lifecycle_state = <"unmanaged">
+	details = <
+		["es"] = <
+			language = <[ISO_639-1::es]>
+		>
+	>
+	other_details = <
+		["licence"] = <"This work is licensed under the Creative Commons Attribution-ShareAlike 4.0 International License. To view a copy of this license, visit http://creativecommons.org/licenses/by-sa/4.0/.">
+		["custodian_organisation"] = <"openEHR Foundation">
+		["original_namespace"] = <"org.openehr">
+		["original_publisher"] = <"openEHR Foundation">
+		["custodian_namespace"] = <"org.openehr">
+		["build_uid"] = <"f5e4360e-6776-3ddd-9872-5c753a487c0c">
+		["MD5-CAM-1.0.1"] = <"853e97382a7546535b76460e69cf4dd9">
+	>
+
+definition
+	COMPOSITION[at0000] matches {    -- Sesión de rehabilitación LCA
+		category matches {
+			DV_CODED_TEXT matches {
+				defining_code matches {
+					[openehr::433]
+				}
+			}
+		}
+		context matches {
+			EVENT_CONTEXT matches {
+				other_context matches {
+					ITEM_TREE[at0001] matches {    -- Item tree
+						items cardinality matches {0..*; unordered} matches {
+							ELEMENT[at0002] matches {    -- Semana postoperatoria
+								value matches {
+									C_DV_QUANTITY <
+										property = <[openehr::128]>
+										list = <
+											["1"] = <
+												units = <"wk">
+												magnitude = <|0.0..52.0|>
+											>
+										>
+									>
+								}
+							}
+							allow_archetype CLUSTER[at0004] matches {    -- Episodio LCA
+								include
+									archetype_id/value matches {/openEHR-EHR-CLUSTER\.episodio_lca\.v0/}
+							}
+							allow_archetype CLUSTER[at0005] occurrences matches {0..1} matches {    -- Datos del paciente
+								include
+									archetype_id/value matches {/openEHR-EHR-CLUSTER\.datos_paciente\.v0/}
+							}
+						}
+					}
+				}
+			}
+		}
+		content cardinality matches {1..*; unordered} matches {
+			SECTION[at0006] matches {    -- Estado clínico
+				items cardinality matches {1..*; unordered} matches {
+					allow_archetype OBSERVATION[at0007] matches {    -- Dolor e inflamación
+						include
+							archetype_id/value matches {/openEHR-EHR-OBSERVATION\.dolor_inflamacion_lca\.v1/}
+					}
+					allow_archetype OBSERVATION[at0008] matches {    -- Rango de movimiento
+						include
+							archetype_id/value matches {/openEHR-EHR-OBSERVATION\.range_of_motion_rodilla_lca\.v1/}
+					}
+				}
+			}
+			SECTION[at0009] occurrences matches {0..1} matches {    -- Fuerza muscular
+				items cardinality matches {1..*; unordered} matches {
+					allow_archetype OBSERVATION[at0010] occurrences matches {0..*} matches {    -- Evaluación de fuerza
+						include
+							archetype_id/value matches {/.*/}
+					}
+				}
+			}
+		}
+	}
+
+ontology
+	term_definitions = <
+		["es"] = <
+			items = <
+				["at0000"] = <
+					text = <"Sesión de rehabilitación LCA">
+					description = <"Documento clínico que registra cada sesión de fisioterapia durante la rehabilitación post-reconstrucción de LCA. Incluye evaluación del dolor, inflamación, rango de movimiento y permite seguir la progresión del paciente semana a semana.">
+				>
+				["at0001"] = <
+					text = <"Item tree">
+					description = <"@ internal @">
+				>
+				["at0002"] = <
+					text = <"Semana postoperatoria">
+					description = <"Número de semanas transcurridas desde la cirugía de reconstrucción del LCA. Se calcula desde la fecha de cirugía registrada en el episodio.">
+				>
+				["at0004"] = <
+					text = <"Episodio LCA">
+					description = <"Referencia al episodio de cuidado LCA que vincula todas las sesiones del mismo paciente">
+				>
+				["at0005"] = <
+					text = <"Datos del paciente">
+					description = <"Información demográfica básica del paciente">
+				>
+				["at0006"] = <
+					text = <"Estado clínico">
+					description = <"Evaluación del estado clínico actual: dolor, inflamación y rango de movimiento">
+				>
+				["at0007"] = <
+					text = <"Dolor e inflamación">
+					description = <"Registro del dolor (EVA) e inflamación de la rodilla">
+				>
+				["at0008"] = <
+					text = <"Rango de movimiento">
+					description = <"Medición del rango de movimiento de la rodilla (flexión y extensión)">
+				>
+				["at0009"] = <
+					text = <"Fuerza muscular">
+					description = <"Evaluación de la fuerza muscular (cuádriceps e isquiotibiales). Solo se registra desde la semana 4 en adelante.">
+				>
+				["at0010"] = <
+					text = <"Evaluación de fuerza">
+					description = <"Medición de la fuerza muscular del cuádriceps e isquiotibiales">
+				>
+			>
+		>
+	>

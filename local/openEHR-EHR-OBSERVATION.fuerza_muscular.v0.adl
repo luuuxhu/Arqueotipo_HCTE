@@ -26,7 +26,7 @@ description
 		["original_namespace"] = <"org.openehr">
 		["original_publisher"] = <"openEHR Foundation">
 		["custodian_namespace"] = <"org.openehr">
-		["MD5-CAM-1.0.1"] = <"5f9804c8f4adf39d6c4c7c95a090288c">
+		["MD5-CAM-1.0.1"] = <"a97f208f481e88e80315e3407295440e">
 		["build_uid"] = <"c346df1a-9897-3bfb-a4ce-f4e8352f3696">
 	>
 
@@ -39,35 +39,57 @@ definition
 						data matches {
 							ITEM_TREE[at0003] matches {    -- Tree
 								items cardinality matches {0..*; unordered} matches {
-									ELEMENT[at0015] occurrences matches {0..1} matches {    -- Test de Lachman
+									ELEMENT[at0038] occurrences matches {0..1} matches {    -- Grupo muscular evaluado
 										value matches {
 											DV_CODED_TEXT matches {
 												defining_code matches {
 													[local::
-													at0024,    -- Negativo
-													at0025,    -- Grado I
-													at0026,    -- Grado II
-													at0027]    -- Grado III
+													at0039,    -- Cuádriceps
+													at0040,    -- Isquiotibiales
+													at0041,    -- Gemelos
+													at0042]    -- Glúteo medio
 												}
 											}
 										}
 									}
-									ELEMENT[at0028] occurrences matches {0..1} matches {    -- Test Pivot Shift
+									ELEMENT[at0043] occurrences matches {0..1} matches {    -- Fuerza lado operado
+										value matches {
+											C_DV_QUANTITY <
+												
+												list = <
+													["1"] = <
+														units = <"kg">
+													>
+													["2"] = <
+														units = <"nm">
+													>
+												>
+											>
+										}
+									}
+									ELEMENT[at0044] occurrences matches {0..1} matches {    -- Ratio de simetría
+										value matches {
+											C_DV_QUANTITY <
+												property = <[openehr::507]>
+												list = <
+													["1"] = <
+														units = <"%">
+														magnitude = <|0.0..100.0|>
+													>
+												>
+											>
+										}
+									}
+									ELEMENT[at0045] occurrences matches {0..1} matches {    -- Método de medición
 										value matches {
 											DV_CODED_TEXT matches {
 												defining_code matches {
 													[local::
-													at0029,    -- Negativo
-													at0030,    -- Glide
-													at0031,    -- Clunk
-													at0032]    -- Gross
+													at0046,    -- Dinamometría isocinética
+													at0047,    -- Dinamometría manual
+													at0048]    -- Test funcional
 												}
 											}
-										}
-									}
-									ELEMENT[at0033] occurrences matches {0..1} matches {    -- Observaciones clínicas
-										value matches {
-											DV_TEXT matches {*}
 										}
 									}
 								}
@@ -121,50 +143,6 @@ ontology
 					text = <"Item tree">
 					description = <"@ internal @">
 				>
-				["at0015"] = <
-					text = <"Test de Lachman">
-					description = <"Resultado del test de Lachman expresado según la clasificación estándar de laxitud ligamentaria">
-				>
-				["at0024"] = <
-					text = <"Negativo">
-					description = <"Sin evidencia de laxitud anterior">
-				>
-				["at0025"] = <
-					text = <"Grado I">
-					description = <"Laxitud leve">
-				>
-				["at0026"] = <
-					text = <"Grado II">
-					description = <"Laxitud moderada">
-				>
-				["at0027"] = <
-					text = <"Grado III">
-					description = <"Laxitud severa">
-				>
-				["at0028"] = <
-					text = <"Test Pivot Shift">
-					description = <"Evaluación clínica de la estabilidad rotacional de la rodilla tras reconstrucción del LCA.">
-				>
-				["at0029"] = <
-					text = <"Negativo">
-					description = <"Sin inestabilidad rotacional">
-				>
-				["at0030"] = <
-					text = <"Glide">
-					description = <"Deslizamiento leve">
-				>
-				["at0031"] = <
-					text = <"Clunk">
-					description = <"Subluxación rotacional evidente">
-				>
-				["at0032"] = <
-					text = <"Gross">
-					description = <"Inestabilidad rotacional severa">
-				>
-				["at0033"] = <
-					text = <"Observaciones clínicas">
-					description = <"">
-				>
 				["at0034"] = <
 					text = <"Profesional">
 					description = <"">
@@ -179,6 +157,50 @@ ontology
 				>
 				["at0037"] = <
 					text = <"Fisioterapeuta">
+					description = <"">
+				>
+				["at0038"] = <
+					text = <"Grupo muscular evaluado">
+					description = <"">
+				>
+				["at0039"] = <
+					text = <"Cuádriceps">
+					description = <"">
+				>
+				["at0040"] = <
+					text = <"Isquiotibiales">
+					description = <"">
+				>
+				["at0041"] = <
+					text = <"Gemelos">
+					description = <"">
+				>
+				["at0042"] = <
+					text = <"Glúteo medio">
+					description = <"">
+				>
+				["at0043"] = <
+					text = <"Fuerza lado operado">
+					description = <"">
+				>
+				["at0044"] = <
+					text = <"Ratio de simetría">
+					description = <"">
+				>
+				["at0045"] = <
+					text = <"Método de medición">
+					description = <"">
+				>
+				["at0046"] = <
+					text = <"Dinamometría isocinética">
+					description = <"">
+				>
+				["at0047"] = <
+					text = <"Dinamometría manual">
+					description = <"">
+				>
+				["at0048"] = <
+					text = <"Test funcional">
 					description = <"">
 				>
 			>

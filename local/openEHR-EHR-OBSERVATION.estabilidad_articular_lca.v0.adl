@@ -26,7 +26,7 @@ description
 		["original_namespace"] = <"org.openehr">
 		["original_publisher"] = <"openEHR Foundation">
 		["custodian_namespace"] = <"org.openehr">
-		["MD5-CAM-1.0.1"] = <"9420e5cb4ee3f84375e27f02e49a4847">
+		["MD5-CAM-1.0.1"] = <"37bc4272e1471103f629b58db53091c0">
 		["build_uid"] = <"c346df1a-9897-3bfb-a4ce-f4e8352f3696">
 	>
 
@@ -48,6 +48,19 @@ definition
 													at0025,    -- Grado I
 													at0026,    -- Grado II
 													at0027]    -- Grado III
+												}
+											}
+										}
+									}
+									ELEMENT[at0028] occurrences matches {0..1} matches {    -- Test Pivot Shift
+										value matches {
+											DV_CODED_TEXT matches {
+												defining_code matches {
+													[local::
+													at0029,    -- Negativo
+													at0030,    -- Glide
+													at0031,    -- Clunk
+													at0032]    -- Gross
 												}
 											}
 										}
@@ -107,6 +120,26 @@ ontology
 				["at0027"] = <
 					text = <"Grado III">
 					description = <"Laxitud severa">
+				>
+				["at0028"] = <
+					text = <"Test Pivot Shift">
+					description = <"">
+				>
+				["at0029"] = <
+					text = <"Negativo">
+					description = <"Sin inestabilidad rotacional">
+				>
+				["at0030"] = <
+					text = <"Glide">
+					description = <"Deslizamiento leve">
+				>
+				["at0031"] = <
+					text = <"Clunk">
+					description = <"Subluxación rotacional evidente">
+				>
+				["at0032"] = <
+					text = <"Gross">
+					description = <"Inestabilidad rotacional severa">
 				>
 			>
 		>

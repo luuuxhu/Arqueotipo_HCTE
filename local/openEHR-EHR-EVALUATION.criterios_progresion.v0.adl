@@ -1,0 +1,43 @@
+archetype (adl_version=1.4; uid=3e938d9b-015c-4db5-b1a7-05a8984600b2)
+	openEHR-EHR-EVALUATION.criterios_progresion.v0
+
+concept
+	[at0000]
+
+language
+	original_language = <[ISO_639-1::es]>
+
+description
+	original_author = <
+		["date"] = <"2026-05-15">
+	>
+	lifecycle_state = <"unmanaged">
+	details = <
+		["es"] = <
+			language = <[ISO_639-1::es]>
+		>
+	>
+	other_details = <
+		["licence"] = <"This work is licensed under the Creative Commons Attribution-ShareAlike 4.0 International License. To view a copy of this license, visit http://creativecommons.org/licenses/by-sa/4.0/.">
+		["custodian_organisation"] = <"openEHR Foundation">
+		["original_namespace"] = <"org.openehr">
+		["original_publisher"] = <"openEHR Foundation">
+		["custodian_namespace"] = <"org.openehr">
+		["MD5-CAM-1.0.1"] = <"76475167c840829ff5e17b285bcc2a8f">
+		["build_uid"] = <"9cac4b4e-8c02-31df-bd70-a8cf510830e8">
+	>
+
+definition
+	EVALUATION[at0000] matches {*}    -- Criterios_Progresion
+
+ontology
+	term_definitions = <
+		["es"] = <
+			items = <
+				["at0000"] = <
+					text = <"Criterios_Progresion">
+					description = <"Criterios_Progresion">
+				>
+			>
+		>
+	>

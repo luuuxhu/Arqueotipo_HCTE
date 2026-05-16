@@ -1,0 +1,54 @@
+archetype (adl_version=1.4; uid=99ce8307-d4c6-43e3-a237-15d00cbe1006)
+	openEHR-EHR-COMPOSITION.informe_postquirurgico_lca.v0
+
+concept
+	[at0000]
+
+language
+	original_language = <[ISO_639-1::es]>
+
+description
+	original_author = <
+		["date"] = <"2026-05-16">
+	>
+	lifecycle_state = <"unmanaged">
+	details = <
+		["es"] = <
+			language = <[ISO_639-1::es]>
+		>
+	>
+	other_details = <
+		["licence"] = <"This work is licensed under the Creative Commons Attribution-ShareAlike 4.0 International License. To view a copy of this license, visit http://creativecommons.org/licenses/by-sa/4.0/.">
+		["custodian_organisation"] = <"openEHR Foundation">
+		["original_namespace"] = <"org.openehr">
+		["original_publisher"] = <"openEHR Foundation">
+		["custodian_namespace"] = <"org.openehr">
+		["MD5-CAM-1.0.1"] = <"466f00e9a1a64f94b65467ad71773ec2">
+		["build_uid"] = <"c13ef362-9644-3a07-9fcf-dffbdccf34fd">
+	>
+
+definition
+	COMPOSITION[at0000] matches {    -- informe_postquirurgico_lca
+		category matches {
+			DV_CODED_TEXT matches {
+				defining_code matches {
+					[openehr::433]
+				}
+			}
+		}
+		context matches {
+			EVENT_CONTEXT matches {*}
+		}
+	}
+
+ontology
+	term_definitions = <
+		["es"] = <
+			items = <
+				["at0000"] = <
+					text = <"informe_postquirurgico_lca">
+					description = <"informe_postquirurgico_lca">
+				>
+			>
+		>
+	>

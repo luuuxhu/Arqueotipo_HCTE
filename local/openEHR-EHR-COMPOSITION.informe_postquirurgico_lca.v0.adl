@@ -23,7 +23,7 @@ description
 		["original_namespace"] = <"org.openehr">
 		["original_publisher"] = <"openEHR Foundation">
 		["custodian_namespace"] = <"org.openehr">
-		["MD5-CAM-1.0.1"] = <"9e73d740835e5b862a4f01f165144e6d">
+		["MD5-CAM-1.0.1"] = <"8076dafb99fab8b698c7eecf64951b1b">
 		["build_uid"] = <"c13ef362-9644-3a07-9fcf-dffbdccf34fd">
 	>
 
@@ -41,11 +41,11 @@ definition
 				other_context matches {
 					ITEM_TREE[at0001] matches {    -- Item tree
 						items cardinality matches {0..*; unordered} matches {
-							allow_archetype CLUSTER[at0003] occurrences matches {0..*} matches {    -- datos_paciente
+							allow_archetype CLUSTER[at0003] occurrences matches {0..*} matches {    -- Datos paciente
 								include
 									archetype_id/value matches {/openEHR-EHR-CLUSTER\.datos_paciente\.v0/}
 							}
-							allow_archetype CLUSTER[at0005] occurrences matches {0..*} matches {    -- episodio_lca
+							allow_archetype CLUSTER[at0005] occurrences matches {0..*} matches {    -- Episodio LCA
 								include
 									archetype_id/value matches {/openEHR-EHR-CLUSTER\.episodio_lca\.v0/}
 							}
@@ -57,7 +57,7 @@ definition
 		content cardinality matches {1..*; unordered} matches {
 			SECTION[at0007] occurrences matches {0..1} matches {    -- Contexto quirúrgico
 				items cardinality matches {1..*; unordered} matches {
-					allow_archetype ACTION[at0009] occurrences matches {0..*} matches {    -- reconstruccion_lca
+					allow_archetype ACTION[at0009] matches {    -- Reconstruccion LCA
 						include
 							archetype_id/value matches {/openEHR-EHR-ACTION\.reconstruccion_lca\.v0/}
 					}
@@ -65,11 +65,11 @@ definition
 			}
 			SECTION[at0008] occurrences matches {0..1} matches {    -- Evaluación inicial
 				items cardinality matches {1..*; unordered} matches {
-					allow_archetype OBSERVATION[at0010] occurrences matches {0..*} matches {    -- dolor_inflamacion
+					allow_archetype OBSERVATION[at0010] matches {    -- Dolor inflamacion
 						include
 							archetype_id/value matches {/openEHR-EHR-OBSERVATION\.dolor_inflamacion\.v1/}
 					}
-					allow_archetype OBSERVATION[at0011] occurrences matches {0..*} matches {    -- rango_de_movimiento_rodilla
+					allow_archetype OBSERVATION[at0011] matches {    -- Rango de movimiento rodilla
 						include
 							archetype_id/value matches {/openEHR-EHR-OBSERVATION\.rango_de_movimiento_rodilla\.v1/}
 					}
@@ -91,11 +91,11 @@ ontology
 					description = <"@ internal @">
 				>
 				["at0003"] = <
-					text = <"datos_paciente">
+					text = <"Datos paciente">
 					description = <"">
 				>
 				["at0005"] = <
-					text = <"episodio_lca">
+					text = <"Episodio LCA">
 					description = <"">
 				>
 				["at0007"] = <
@@ -107,15 +107,15 @@ ontology
 					description = <"Valoración clínica inicial del paciente el día posterior a la cirugía.">
 				>
 				["at0009"] = <
-					text = <"reconstruccion_lca">
+					text = <"Reconstruccion LCA">
 					description = <"">
 				>
 				["at0010"] = <
-					text = <"dolor_inflamacion">
+					text = <"Dolor inflamacion">
 					description = <"">
 				>
 				["at0011"] = <
-					text = <"rango_de_movimiento_rodilla">
+					text = <"Rango de movimiento rodilla">
 					description = <"">
 				>
 			>

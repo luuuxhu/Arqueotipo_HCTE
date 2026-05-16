@@ -23,7 +23,7 @@ description
 		["original_namespace"] = <"org.openehr">
 		["original_publisher"] = <"openEHR Foundation">
 		["custodian_namespace"] = <"org.openehr">
-		["MD5-CAM-1.0.1"] = <"f2737031e440e2af6a54fa4d03de8bf3">
+		["MD5-CAM-1.0.1"] = <"2593f8ac7eab807d60e0d6d727c0f35b">
 		["build_uid"] = <"f5e4360e-6776-3ddd-9872-5c753a487c0c">
 	>
 
@@ -82,7 +82,7 @@ definition
 			}
 			SECTION[at0009] occurrences matches {0..1} matches {    -- Fuerza muscular
 				items cardinality matches {1..*; unordered} matches {
-					allow_archetype OBSERVATION[at0010] occurrences matches {0..*} matches {    -- fuerza_muscular
+					allow_archetype OBSERVATION[at0010] occurrences matches {0..1} matches {    -- fuerza_muscular
 						include
 							archetype_id/value matches {/openEHR-EHR-OBSERVATION\.fuerza_muscular\.v0/}
 					}

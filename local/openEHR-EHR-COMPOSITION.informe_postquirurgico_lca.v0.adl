@@ -23,7 +23,7 @@ description
 		["original_namespace"] = <"org.openehr">
 		["original_publisher"] = <"openEHR Foundation">
 		["custodian_namespace"] = <"org.openehr">
-		["MD5-CAM-1.0.1"] = <"3bcac4eab46ee7d30b00be88c6294dc1">
+		["MD5-CAM-1.0.1"] = <"c2202cb7a1da6235a62e2b08fea1aee4">
 		["build_uid"] = <"c13ef362-9644-3a07-9fcf-dffbdccf34fd">
 	>
 
@@ -41,11 +41,11 @@ definition
 				other_context matches {
 					ITEM_TREE[at0001] matches {    -- Item tree
 						items cardinality matches {0..*; unordered} matches {
-							allow_archetype CLUSTER[at0003] occurrences matches {0..1} matches {    -- datos_paciente
+							allow_archetype CLUSTER[at0003] matches {    -- datos_paciente
 								include
 									archetype_id/value matches {/openEHR-EHR-CLUSTER\.datos_paciente\.v0/}
 							}
-							allow_archetype CLUSTER[at0005] occurrences matches {0..1} matches {    -- episodio_lca
+							allow_archetype CLUSTER[at0005] matches {    -- episodio_lca
 								include
 									archetype_id/value matches {/openEHR-EHR-CLUSTER\.episodio_lca\.v0/}
 							}

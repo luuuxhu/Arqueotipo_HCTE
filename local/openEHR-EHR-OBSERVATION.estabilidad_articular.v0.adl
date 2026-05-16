@@ -26,7 +26,7 @@ description
 		["original_namespace"] = <"org.openehr">
 		["original_publisher"] = <"openEHR Foundation">
 		["custodian_namespace"] = <"org.openehr">
-		["MD5-CAM-1.0.1"] = <"14b51261655f760b7af33690a4f3dc11">
+		["MD5-CAM-1.0.1"] = <"380c7ea995482bcb6a08b544a1425500">
 		["build_uid"] = <"c346df1a-9897-3bfb-a4ce-f4e8352f3696">
 	>
 
@@ -78,22 +78,7 @@ definition
 			}
 		}
 		protocol matches {
-			ITEM_TREE[at0011] matches {    -- Item tree
-				items cardinality matches {0..*; unordered} matches {
-					ELEMENT[at0034] occurrences matches {0..1} matches {    -- Profesional evaluador
-						value matches {
-							DV_CODED_TEXT matches {
-								defining_code matches {
-									[local::
-									at0035,    -- Traumatólogo
-									at0036,    -- Médico rehabilitador
-									at0037]    -- Fisioterapeuta
-								}
-							}
-						}
-					}
-				}
-			}
+			ITEM_TREE[at0011] matches {*}    -- Item tree
 		}
 	}
 
@@ -163,22 +148,6 @@ ontology
 				>
 				["at0033"] = <
 					text = <"Observaciones clínicas">
-					description = <"">
-				>
-				["at0034"] = <
-					text = <"Profesional evaluador">
-					description = <"">
-				>
-				["at0035"] = <
-					text = <"Traumatólogo">
-					description = <"">
-				>
-				["at0036"] = <
-					text = <"Médico rehabilitador">
-					description = <"">
-				>
-				["at0037"] = <
-					text = <"Fisioterapeuta">
 					description = <"">
 				>
 			>

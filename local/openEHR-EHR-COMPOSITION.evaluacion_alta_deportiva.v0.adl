@@ -23,12 +23,12 @@ description
 		["original_namespace"] = <"org.openehr">
 		["original_publisher"] = <"openEHR Foundation">
 		["custodian_namespace"] = <"org.openehr">
-		["MD5-CAM-1.0.1"] = <"2b5ca11b0261bb829e75d7e74202d78c">
+		["MD5-CAM-1.0.1"] = <"1fc66fc02abbb61ce233bed9d79bc54c">
 		["build_uid"] = <"f921ca50-07f3-3c58-bdff-fd44e116f235">
 	>
 
 definition
-	COMPOSITION[at0000] matches {    -- Evaluación alta deportiva
+	COMPOSITION[at0000] matches {    -- Evaluación alta deportiva LCA
 		category matches {
 			DV_CODED_TEXT matches {
 				defining_code matches {
@@ -41,9 +41,17 @@ definition
 				other_context matches {
 					ITEM_TREE[at0001] matches {    -- Item tree
 						items cardinality matches {0..*; unordered} matches {
-							ELEMENT[at0004] matches {    -- Semana postoperatoria
+							ELEMENT[at0011] matches {    -- Semana postoperatoria
 								value matches {
-									DV_QUANTITY matches {*}
+									C_DV_QUANTITY <
+										property = <[openehr::128]>
+										list = <
+											["1"] = <
+												units = <"wk">
+												magnitude = <|0.0..52.0|>
+											>
+										>
+									>
 								}
 							}
 							allow_archetype CLUSTER[at0003] occurrences matches {0..*} matches {    -- episodio_lca
@@ -88,7 +96,7 @@ ontology
 		["es"] = <
 			items = <
 				["at0000"] = <
-					text = <"Evaluación alta deportiva">
+					text = <"Evaluación alta deportiva LCA">
 					description = <"Evaluacion_alta_deportiva">
 				>
 				["at0001"] = <
@@ -97,10 +105,6 @@ ontology
 				>
 				["at0003"] = <
 					text = <"episodio_lca">
-					description = <"">
-				>
-				["at0004"] = <
-					text = <"Semana postoperatoria">
 					description = <"">
 				>
 				["at0005"] = <
@@ -126,6 +130,10 @@ ontology
 				["at0010"] = <
 					text = <"datos_paciente">
 					description = <"">
+				>
+				["at0011"] = <
+					text = <"Semana postoperatoria">
+					description = <"Número de semanas transcurridas desde la cirugía de reconstrucción del LCA. Se calcula desde la fecha de cirugía registrada en el episodio.">
 				>
 			>
 		>

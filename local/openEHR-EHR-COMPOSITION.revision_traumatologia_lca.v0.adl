@@ -23,7 +23,7 @@ description
 		["original_namespace"] = <"org.openehr">
 		["original_publisher"] = <"openEHR Foundation">
 		["custodian_namespace"] = <"org.openehr">
-		["MD5-CAM-1.0.1"] = <"053c1434fd24225fc08b8cf2a978d471">
+		["MD5-CAM-1.0.1"] = <"ba4387c45edcf953f5c79b79d0de34ec">
 		["build_uid"] = <"97c50852-25b5-36a8-836d-da51c80f7fd8">
 	>
 
@@ -46,11 +46,11 @@ definition
 									DV_QUANTITY matches {*}
 								}
 							}
-							allow_archetype CLUSTER[at0003] occurrences matches {0..*} matches {    -- episodio_lca
+							allow_archetype CLUSTER[at0003] matches {    -- episodio_lca
 								include
 									archetype_id/value matches {/openEHR-EHR-CLUSTER\.episodio_lca\.v0/}
 							}
-							allow_archetype CLUSTER[at0015] occurrences matches {0..*} matches {    -- datos_paciente
+							allow_archetype CLUSTER[at0015] matches {    -- datos_paciente
 								include
 									archetype_id/value matches {/openEHR-EHR-CLUSTER\.datos_paciente\.v0/}
 							}
@@ -62,11 +62,11 @@ definition
 		content cardinality matches {1..*; unordered} matches {
 			SECTION[at0005] occurrences matches {0..1} matches {    -- Exploración_física
 				items cardinality matches {1..*; unordered} matches {
-					allow_archetype OBSERVATION[at0011] occurrences matches {0..*} matches {    -- estabilidad_articular
+					allow_archetype OBSERVATION[at0011] matches {    -- estabilidad_articular
 						include
 							archetype_id/value matches {/openEHR-EHR-OBSERVATION\.estabilidad_articular\.v0/}
 					}
-					allow_archetype OBSERVATION[at0012] occurrences matches {0..*} matches {    -- rango_de_movimiento_rodilla
+					allow_archetype OBSERVATION[at0012] matches {    -- rango_de_movimiento_rodilla
 						include
 							archetype_id/value matches {/openEHR-EHR-OBSERVATION\.rango_de_movimiento_rodilla\.v1/}
 					}
@@ -74,7 +74,7 @@ definition
 			}
 			SECTION[at0013] occurrences matches {0..1} matches {    -- Valoración y decisión
 				items cardinality matches {1..*; unordered} matches {
-					allow_archetype EVALUATION[at0014] occurrences matches {0..*} matches {    -- criterios_progresion
+					allow_archetype EVALUATION[at0014] matches {    -- criterios_progresion
 						include
 							archetype_id/value matches {/openEHR-EHR-EVALUATION\.criterios_progresion\.v0/}
 					}

@@ -23,7 +23,7 @@ description
 		["original_namespace"] = <"org.openehr">
 		["original_publisher"] = <"openEHR Foundation">
 		["custodian_namespace"] = <"org.openehr">
-		["MD5-CAM-1.0.1"] = <"275fb3fa04d0fa931d54e262a77df772">
+		["MD5-CAM-1.0.1"] = <"4420ba96737fa40b4cf5ad30cc82a4ec">
 		["build_uid"] = <"9cac4b4e-8c02-31df-bd70-a8cf510830e8">
 	>
 
@@ -73,31 +73,28 @@ definition
 							}
 						}
 					}
-				}
-			}
-		}
-		protocol matches {
-			ITEM_TREE[at0014] matches {    -- Item tree
-				items cardinality matches {0..*; unordered} matches {
-					ELEMENT[at0015] matches {    -- Decisión clínica
+					ELEMENT[at0022] occurrences matches {0..1} matches {    -- Decisión clínica
 						value matches {
 							DV_CODED_TEXT matches {
 								defining_code matches {
 									[local::
-									at0016,    -- Avanzar de fase
-									at0017,    -- Mantener fase
-									at0018]    -- Modificar protocolo
+									at0023,    -- Avanzar de fase
+									at0024,    -- Mantener fase
+									at0025]    -- Modificar protocolo
 								}
 							}
 						}
 					}
-					ELEMENT[at0019] occurrences matches {0..1} matches {    -- Observaciones
+					ELEMENT[at0021] occurrences matches {0..1} matches {    -- Observaciones
 						value matches {
 							DV_TEXT matches {*}
 						}
 					}
 				}
 			}
+		}
+		protocol matches {
+			ITEM_TREE[at0014] matches {*}    -- Item tree
 		}
 	}
 
@@ -153,28 +150,28 @@ ontology
 					text = <"Item tree">
 					description = <"@ internal @">
 				>
-				["at0015"] = <
-					text = <"Decisión clínica">
+				["at0020"] = <
+					text = <"Criterios cumplidos">
 					description = <"">
 				>
-				["at0016"] = <
-					text = <"Avanzar de fase">
-					description = <"">
-				>
-				["at0017"] = <
-					text = <"Mantener fase">
-					description = <"">
-				>
-				["at0018"] = <
-					text = <"Modificar protocolo">
-					description = <"">
-				>
-				["at0019"] = <
+				["at0021"] = <
 					text = <"Observaciones">
 					description = <"">
 				>
-				["at0020"] = <
-					text = <"Criterios cumplidos">
+				["at0022"] = <
+					text = <"Decisión clínica">
+					description = <"">
+				>
+				["at0023"] = <
+					text = <"Avanzar de fase">
+					description = <"">
+				>
+				["at0024"] = <
+					text = <"Mantener fase">
+					description = <"">
+				>
+				["at0025"] = <
+					text = <"Modificar protocolo">
 					description = <"">
 				>
 			>

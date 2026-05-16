@@ -1,0 +1,98 @@
+archetype (adl_version=1.4; uid=bc41a476-83c6-42dd-820a-05f38e23c7d3)
+	openEHR-EHR-COMPOSITION.revision_traumatologia_lca.v0
+
+concept
+	[at0000]
+
+language
+	original_language = <[ISO_639-1::es]>
+
+description
+	original_author = <
+		["date"] = <"2026-05-16">
+	>
+	lifecycle_state = <"unmanaged">
+	details = <
+		["es"] = <
+			language = <[ISO_639-1::es]>
+		>
+	>
+	other_details = <
+		["licence"] = <"This work is licensed under the Creative Commons Attribution-ShareAlike 4.0 International License. To view a copy of this license, visit http://creativecommons.org/licenses/by-sa/4.0/.">
+		["custodian_organisation"] = <"openEHR Foundation">
+		["original_namespace"] = <"org.openehr">
+		["original_publisher"] = <"openEHR Foundation">
+		["custodian_namespace"] = <"org.openehr">
+		["MD5-CAM-1.0.1"] = <"a604b3829d1bf9f455f23f1c10f43f20">
+		["build_uid"] = <"97c50852-25b5-36a8-836d-da51c80f7fd8">
+	>
+
+definition
+	COMPOSITION[at0000] matches {    -- Revision_traumatologia_LCA
+		category matches {
+			DV_CODED_TEXT matches {
+				defining_code matches {
+					[openehr::433]
+				}
+			}
+		}
+		context matches {
+			EVENT_CONTEXT matches {
+				other_context matches {
+					ITEM_TREE[at0001] matches {    -- Item tree
+						items cardinality matches {0..*; unordered} matches {
+							ELEMENT[at0002] matches {    -- ID_paciente
+								value matches {
+									DV_IDENTIFIER matches {*}
+								}
+							}
+							allow_archetype CLUSTER[at0003] occurrences matches {0..*} matches {    -- episodio_lca
+								include
+									archetype_id/value matches {/.*|openEHR-EHR-CLUSTER\.episodio_lca\.v0/}
+							}
+							ELEMENT[at0004] matches {    -- semana_postoperatoria
+								value matches {
+									DV_QUANTITY matches {*}
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+		content cardinality matches {1..*; unordered} matches {
+			SECTION[at0005] occurrences matches {0..1} matches {*}    -- Exploración_física
+		}
+	}
+
+ontology
+	term_definitions = <
+		["es"] = <
+			items = <
+				["at0000"] = <
+					text = <"Revision_traumatologia_LCA">
+					description = <"Revision_traumatologia_LCA">
+				>
+				["at0001"] = <
+					text = <"Item tree">
+					description = <"@ internal @">
+				>
+				["at0002"] = <
+					text = <"ID_paciente">
+					description = <"">
+				>
+				["at0003"] = <
+					text = <"episodio_lca">
+					description = <"">
+				>
+				["at0004"] = <
+					text = <"semana_postoperatoria">
+					description = <"">
+				>
+				["at0005"] = <
+					text = <"Exploración_física">
+					description = <"">
+				>
+			>
+		>
+	>

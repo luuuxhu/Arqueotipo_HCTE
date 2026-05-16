@@ -1,0 +1,133 @@
+archetype (adl_version=1.4; uid=d7d8a964-3395-45ad-9107-dbee4cbe2fb4)
+	openEHR-EHR-COMPOSITION.evaluacion_alta_deportiva.v0
+
+concept
+	[at0000]
+
+language
+	original_language = <[ISO_639-1::es]>
+
+description
+	original_author = <
+		["date"] = <"2026-05-16">
+	>
+	lifecycle_state = <"unmanaged">
+	details = <
+		["es"] = <
+			language = <[ISO_639-1::es]>
+		>
+	>
+	other_details = <
+		["licence"] = <"This work is licensed under the Creative Commons Attribution-ShareAlike 4.0 International License. To view a copy of this license, visit http://creativecommons.org/licenses/by-sa/4.0/.">
+		["custodian_organisation"] = <"openEHR Foundation">
+		["original_namespace"] = <"org.openehr">
+		["original_publisher"] = <"openEHR Foundation">
+		["custodian_namespace"] = <"org.openehr">
+		["MD5-CAM-1.0.1"] = <"4016f06c8337fce8db08ea020a66d151">
+		["build_uid"] = <"f921ca50-07f3-3c58-bdff-fd44e116f235">
+	>
+
+definition
+	COMPOSITION[at0000] matches {    -- Evaluacion_alta_deportiva
+		category matches {
+			DV_CODED_TEXT matches {
+				defining_code matches {
+					[openehr::433]
+				}
+			}
+		}
+		context matches {
+			EVENT_CONTEXT matches {
+				other_context matches {
+					ITEM_TREE[at0001] matches {    -- Item tree
+						items cardinality matches {0..*; unordered} matches {
+							ELEMENT[at0002] matches {    -- ID_paciente
+								value matches {
+									DV_IDENTIFIER matches {*}
+								}
+							}
+							allow_archetype CLUSTER[at0003] occurrences matches {0..*} matches {    -- episodio_lca
+								include
+									archetype_id/value matches {/.*|openEHR-EHR-CLUSTER\.episodio_lca\.v0/}
+							}
+							ELEMENT[at0004] matches {    -- semana_postoperatoria
+								value matches {
+									DV_QUANTITY matches {*}
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+		content cardinality matches {1..*; unordered} matches {
+			SECTION[at0005] occurrences matches {0..1} matches {    -- Pruebas funcionales
+				items cardinality matches {1..*; unordered} matches {
+					allow_archetype OBSERVATION[at0006] occurrences matches {0..*} matches {    -- hop_test
+						include
+							archetype_id/value matches {/.*|openEHR-EHR-OBSERVATION\.hop_tests\.v0/}
+					}
+					allow_archetype OBSERVATION[at0007] occurrences matches {0..*} matches {    -- fuerza_muscular
+						include
+							archetype_id/value matches {/.*|openEHR-EHR-OBSERVATION\.fuerza_muscular\.v0/}
+					}
+				}
+			}
+			SECTION[at0008] occurrences matches {0..1} matches {    -- Decisión de alta
+				items cardinality matches {1..*; unordered} matches {
+					allow_archetype EVALUATION[at0009] occurrences matches {0..*} matches {    -- alta_deportiva
+						include
+							archetype_id/value matches {/.*|openEHR-EHR-EVALUATION\.alta_deportiva\.v0/}
+					}
+				}
+			}
+		}
+	}
+
+ontology
+	term_definitions = <
+		["es"] = <
+			items = <
+				["at0000"] = <
+					text = <"Evaluacion_alta_deportiva">
+					description = <"Evaluacion_alta_deportiva">
+				>
+				["at0001"] = <
+					text = <"Item tree">
+					description = <"@ internal @">
+				>
+				["at0002"] = <
+					text = <"ID_paciente">
+					description = <"">
+				>
+				["at0003"] = <
+					text = <"episodio_lca">
+					description = <"">
+				>
+				["at0004"] = <
+					text = <"semana_postoperatoria">
+					description = <"">
+				>
+				["at0005"] = <
+					text = <"Pruebas funcionales">
+					description = <"">
+				>
+				["at0006"] = <
+					text = <"hop_test">
+					description = <"">
+				>
+				["at0007"] = <
+					text = <"fuerza_muscular">
+					description = <"">
+				>
+				["at0008"] = <
+					text = <"Decisión de alta">
+					description = <"">
+				>
+				["at0009"] = <
+					text = <"alta_deportiva">
+					description = <"">
+				>
+			>
+		>
+	>

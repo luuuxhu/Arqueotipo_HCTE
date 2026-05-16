@@ -23,12 +23,106 @@ description
 		["original_namespace"] = <"org.openehr">
 		["original_publisher"] = <"openEHR Foundation">
 		["custodian_namespace"] = <"org.openehr">
-		["MD5-CAM-1.0.1"] = <"aec958353a74b1d7ec72fab330e0072a">
+		["MD5-CAM-1.0.1"] = <"610849cc713920e51afa8ec2e5d7b8f7">
 		["build_uid"] = <"c2ef1409-2a31-334e-93cc-9131d3db37dc">
 	>
 
 definition
-	ACTION[at0000] matches {*}    -- Reconstruccion_lca
+	ACTION[at0000] matches {    -- Reconstruccion_lca
+		description matches {
+			ITEM_TREE[at0001] matches {    -- Item tree
+				items cardinality matches {0..*; unordered} matches {
+					ELEMENT[at0003] occurrences matches {0..1} matches {    -- Técnica quirúrgica
+						value matches {
+							DV_CODED_TEXT matches {
+								defining_code matches {
+									[local::
+									at0004,    -- Transtibial
+									at0005,    -- Anteromedial
+									at0006]    -- All-inside
+								}
+							}
+						}
+					}
+					ELEMENT[at0007] occurrences matches {0..1} matches {    -- Tipo de injerto
+						value matches {
+							DV_CODED_TEXT matches {
+								defining_code matches {
+									[local::
+									at0008,    -- Autoinjerto de tendones isquiotibiales
+									at0009,    -- Autoinjerto de tendón patelar
+									at0010,    -- Aloinjerto
+									at0011]    -- Injerto sintético
+								}
+							}
+						}
+					}
+					ELEMENT[at0012] occurrences matches {0..1} matches {    -- Lado intervenido
+						value matches {
+							DV_CODED_TEXT matches {
+								defining_code matches {
+									[local::
+									at0013,    -- Derecho
+									at0014]    -- Izquierdo
+								}
+							}
+						}
+					}
+					ELEMENT[at0015] occurrences matches {0..1} matches {    -- Lesiones asociadas tratadas
+						value matches {
+							DV_CODED_TEXT matches {
+								defining_code matches {
+									[local::
+									at0016,    -- Lesión de menisco medial
+									at0017,    -- Lesión de menisco lateral
+									at0018,    -- Lesión de cartílago articular
+									at0019,    -- Ninguna
+									at0020]    -- Lesión multiligamentaria
+								}
+							}
+						}
+					}
+					ELEMENT[at0021] occurrences matches {0..1} matches {    -- Complicaciones intraoperatorias
+						value matches {
+							DV_CODED_TEXT matches {
+								defining_code matches {
+									[local::
+									at0022,    -- Ninguna
+									at0023,    -- Fractura túnel óseo
+									at0024,    -- Lesión vascular
+									at0025]    -- Otras
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+		protocol matches {
+			ITEM_TREE[at0002] matches {    -- Item tree
+				items cardinality matches {0..*; unordered} matches {
+					ELEMENT[at0026] occurrences matches {0..1} matches {    -- Cirujano responsable
+						value matches {
+							DV_TEXT matches {*}
+						}
+					}
+					ELEMENT[at0027] occurrences matches {0..1} matches {    -- Duración del procedimiento
+						value matches {
+							C_DV_QUANTITY <
+								property = <[openehr::128]>
+								list = <
+									["1"] = <
+										units = <"min">
+										magnitude = <|0.0..300.0|>
+									>
+								>
+							>
+						}
+					}
+				}
+			}
+		}
+	}
 
 ontology
 	term_definitions = <
@@ -37,6 +131,114 @@ ontology
 				["at0000"] = <
 					text = <"Reconstruccion_lca">
 					description = <"Reconstruccion_lca">
+				>
+				["at0001"] = <
+					text = <"Item tree">
+					description = <"@ internal @">
+				>
+				["at0002"] = <
+					text = <"Item tree">
+					description = <"@ internal @">
+				>
+				["at0003"] = <
+					text = <"Técnica quirúrgica">
+					description = <"Abordaje quirúrgico utilizado para la reconstrucción del LCA">
+				>
+				["at0004"] = <
+					text = <"Transtibial">
+					description = <"">
+				>
+				["at0005"] = <
+					text = <"Anteromedial">
+					description = <"">
+				>
+				["at0006"] = <
+					text = <"All-inside">
+					description = <"">
+				>
+				["at0007"] = <
+					text = <"Tipo de injerto">
+					description = <"Tipo de injerto utilizado en la reconstrucción">
+				>
+				["at0008"] = <
+					text = <"Autoinjerto de tendones isquiotibiales">
+					description = <"442348003">
+				>
+				["at0009"] = <
+					text = <"Autoinjerto de tendón patelar">
+					description = <"442347008">
+				>
+				["at0010"] = <
+					text = <"Aloinjerto">
+					description = <"442346004">
+				>
+				["at0011"] = <
+					text = <"Injerto sintético">
+					description = <"">
+				>
+				["at0012"] = <
+					text = <"Lado intervenido">
+					description = <"">
+				>
+				["at0013"] = <
+					text = <"Derecho">
+					description = <"">
+				>
+				["at0014"] = <
+					text = <"Izquierdo">
+					description = <"">
+				>
+				["at0015"] = <
+					text = <"Lesiones asociadas tratadas">
+					description = <"Lesiones encontradas durante la cirugía">
+				>
+				["at0016"] = <
+					text = <"Lesión de menisco medial">
+					description = <"239720000">
+				>
+				["at0017"] = <
+					text = <"Lesión de menisco lateral">
+					description = <"239721001">
+				>
+				["at0018"] = <
+					text = <"Lesión de cartílago articular">
+					description = <"428432003">
+				>
+				["at0019"] = <
+					text = <"Ninguna">
+					description = <"">
+				>
+				["at0020"] = <
+					text = <"Lesión multiligamentaria">
+					description = <"">
+				>
+				["at0021"] = <
+					text = <"Complicaciones intraoperatorias">
+					description = <"">
+				>
+				["at0022"] = <
+					text = <"Ninguna">
+					description = <"">
+				>
+				["at0023"] = <
+					text = <"Fractura túnel óseo">
+					description = <"">
+				>
+				["at0024"] = <
+					text = <"Lesión vascular">
+					description = <"">
+				>
+				["at0025"] = <
+					text = <"Otras">
+					description = <"">
+				>
+				["at0026"] = <
+					text = <"Cirujano responsable">
+					description = <"">
+				>
+				["at0027"] = <
+					text = <"Duración del procedimiento">
+					description = <"">
 				>
 			>
 		>

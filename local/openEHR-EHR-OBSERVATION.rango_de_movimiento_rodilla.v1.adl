@@ -26,12 +26,12 @@ description
 		["original_namespace"] = <"org.openehr">
 		["original_publisher"] = <"openEHR Foundation">
 		["custodian_namespace"] = <"org.openehr">
-		["MD5-CAM-1.0.1"] = <"e0fc65bdb478082aa6698ea60b2ed2f3">
+		["MD5-CAM-1.0.1"] = <"e8fb997c2665b8933cf5781bf63181f0">
 		["build_uid"] = <"c346df1a-9897-3bfb-a4ce-f4e8352f3696">
 	>
 
 definition
-	OBSERVATION[at0000] matches {    -- rango_de_movimiento_rodilla
+	OBSERVATION[at0000] matches {    -- Rango de movimiento rodilla
 		data matches {
 			HISTORY[at0001] matches {    -- History
 				events cardinality matches {1..*; unordered} matches {
@@ -125,7 +125,7 @@ ontology
 		["es"] = <
 			items = <
 				["at0000"] = <
-					text = <"rango_de_movimiento_rodilla">
+					text = <"Rango de movimiento rodilla">
 					description = <"range_of_motion_rodilla_lca">
 				>
 				["at0001"] = <

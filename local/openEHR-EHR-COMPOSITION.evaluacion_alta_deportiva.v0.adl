@@ -23,12 +23,12 @@ description
 		["original_namespace"] = <"org.openehr">
 		["original_publisher"] = <"openEHR Foundation">
 		["custodian_namespace"] = <"org.openehr">
-		["MD5-CAM-1.0.1"] = <"bb74f2e9fc5d77b19ea82bb0154f4c61">
+		["MD5-CAM-1.0.1"] = <"2b5ca11b0261bb829e75d7e74202d78c">
 		["build_uid"] = <"f921ca50-07f3-3c58-bdff-fd44e116f235">
 	>
 
 definition
-	COMPOSITION[at0000] matches {    -- Evaluacion_alta_deportiva
+	COMPOSITION[at0000] matches {    -- Evaluación alta deportiva
 		category matches {
 			DV_CODED_TEXT matches {
 				defining_code matches {
@@ -41,19 +41,18 @@ definition
 				other_context matches {
 					ITEM_TREE[at0001] matches {    -- Item tree
 						items cardinality matches {0..*; unordered} matches {
-							ELEMENT[at0002] matches {    -- ID_paciente
+							ELEMENT[at0004] matches {    -- Semana postoperatoria
 								value matches {
-									DV_IDENTIFIER matches {*}
+									DV_QUANTITY matches {*}
 								}
 							}
 							allow_archetype CLUSTER[at0003] occurrences matches {0..*} matches {    -- episodio_lca
 								include
 									archetype_id/value matches {/openEHR-EHR-CLUSTER\.episodio_lca\.v0/}
 							}
-							ELEMENT[at0004] matches {    -- semana_postoperatoria
-								value matches {
-									DV_QUANTITY matches {*}
-								}
+							allow_archetype CLUSTER[at0010] occurrences matches {0..*} matches {    -- datos_paciente
+								include
+									archetype_id/value matches {/openEHR-EHR-CLUSTER\.datos_paciente\.v0/}
 							}
 						}
 					}
@@ -63,7 +62,7 @@ definition
 		content cardinality matches {1..*; unordered} matches {
 			SECTION[at0005] occurrences matches {0..1} matches {    -- Pruebas funcionales
 				items cardinality matches {1..*; unordered} matches {
-					allow_archetype OBSERVATION[at0006] occurrences matches {0..*} matches {    -- hop_test
+					allow_archetype OBSERVATION[at0006] occurrences matches {0..*} matches {    -- hop_tests
 						include
 							archetype_id/value matches {/openEHR-EHR-OBSERVATION\.hop_tests\.v0/}
 					}
@@ -89,23 +88,19 @@ ontology
 		["es"] = <
 			items = <
 				["at0000"] = <
-					text = <"Evaluacion_alta_deportiva">
+					text = <"Evaluación alta deportiva">
 					description = <"Evaluacion_alta_deportiva">
 				>
 				["at0001"] = <
 					text = <"Item tree">
 					description = <"@ internal @">
 				>
-				["at0002"] = <
-					text = <"ID_paciente">
-					description = <"">
-				>
 				["at0003"] = <
 					text = <"episodio_lca">
 					description = <"">
 				>
 				["at0004"] = <
-					text = <"semana_postoperatoria">
+					text = <"Semana postoperatoria">
 					description = <"">
 				>
 				["at0005"] = <
@@ -113,7 +108,7 @@ ontology
 					description = <"">
 				>
 				["at0006"] = <
-					text = <"hop_test">
+					text = <"hop_tests">
 					description = <"">
 				>
 				["at0007"] = <
@@ -126,6 +121,10 @@ ontology
 				>
 				["at0009"] = <
 					text = <"alta_deportiva">
+					description = <"">
+				>
+				["at0010"] = <
+					text = <"datos_paciente">
 					description = <"">
 				>
 			>

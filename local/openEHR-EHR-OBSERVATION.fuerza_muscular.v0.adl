@@ -26,7 +26,7 @@ description
 		["original_namespace"] = <"org.openehr">
 		["original_publisher"] = <"openEHR Foundation">
 		["custodian_namespace"] = <"org.openehr">
-		["MD5-CAM-1.0.1"] = <"8d36ab2fd4f772fee14e1565d826cf0a">
+		["MD5-CAM-1.0.1"] = <"0073267d07d71817e1f5266b955213d9">
 		["build_uid"] = <"c346df1a-9897-3bfb-a4ce-f4e8352f3696">
 	>
 
@@ -112,17 +112,6 @@ definition
 		protocol matches {
 			ITEM_TREE[at0011] matches {    -- Item tree
 				items cardinality matches {0..*; unordered} matches {
-					ELEMENT[at0034] occurrences matches {0..1} matches {    -- Profesional evaluador
-						value matches {
-							DV_CODED_TEXT matches {
-								defining_code matches {
-									[local::
-									at0049,    -- Fisioterapeuta
-									at0050]    -- Médico rehabilitador
-								}
-							}
-						}
-					}
 					ELEMENT[at0056] occurrences matches {0..1} matches {    -- Método de medición
 						value matches {
 							DV_CODED_TEXT matches {
@@ -164,10 +153,6 @@ ontology
 					text = <"Item tree">
 					description = <"@ internal @">
 				>
-				["at0034"] = <
-					text = <"Profesional evaluador">
-					description = <"">
-				>
 				["at0038"] = <
 					text = <"Grupo muscular evaluado">
 					description = <"">
@@ -194,14 +179,6 @@ ontology
 				>
 				["at0044"] = <
 					text = <"Ratio de simetría">
-					description = <"">
-				>
-				["at0049"] = <
-					text = <"Fisioterapeuta">
-					description = <"">
-				>
-				["at0050"] = <
-					text = <"Médico rehabilitador">
 					description = <"">
 				>
 				["at0055"] = <

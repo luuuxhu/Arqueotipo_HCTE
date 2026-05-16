@@ -23,12 +23,12 @@ description
 		["original_namespace"] = <"org.openehr">
 		["original_publisher"] = <"openEHR Foundation">
 		["custodian_namespace"] = <"org.openehr">
-		["MD5-CAM-1.0.1"] = <"48700cef8ec7c6bdfcf2c563184ec340">
+		["MD5-CAM-1.0.1"] = <"7dd9a37433bbeddb1b639508f15c0887">
 		["build_uid"] = <"c13ef362-9644-3a07-9fcf-dffbdccf34fd">
 	>
 
 definition
-	COMPOSITION[at0000] matches {    -- informe_postquirurgico_lca
+	COMPOSITION[at0000] matches {    -- Informe postquirúrgico
 		category matches {
 			DV_CODED_TEXT matches {
 				defining_code matches {
@@ -45,7 +45,7 @@ definition
 								include
 									archetype_id/value matches {/openEHR-EHR-CLUSTER\.datos_paciente\.v0/}
 							}
-							allow_archetype CLUSTER[at0005] occurrences matches {0..*} matches {    -- Episodio_lca
+							allow_archetype CLUSTER[at0005] occurrences matches {0..*} matches {    -- episodio_lca
 								include
 									archetype_id/value matches {/openEHR-EHR-CLUSTER\.episodio_lca\.v0/}
 							}
@@ -83,7 +83,7 @@ ontology
 		["es"] = <
 			items = <
 				["at0000"] = <
-					text = <"informe_postquirurgico_lca">
+					text = <"Informe postquirúrgico">
 					description = <"informe_postquirurgico_lca">
 				>
 				["at0001"] = <
@@ -95,7 +95,7 @@ ontology
 					description = <"">
 				>
 				["at0005"] = <
-					text = <"Episodio_lca">
+					text = <"episodio_lca">
 					description = <"">
 				>
 				["at0007"] = <

@@ -23,7 +23,7 @@ description
 		["original_namespace"] = <"org.openehr">
 		["original_publisher"] = <"openEHR Foundation">
 		["custodian_namespace"] = <"org.openehr">
-		["MD5-CAM-1.0.1"] = <"96b044d8bbe1282132b040fc5fbf930d">
+		["MD5-CAM-1.0.1"] = <"0a2dccae15856674243ed857d67cd441">
 		["build_uid"] = <"b2be7aab-46ee-3769-a139-ae623a4bac34">
 	>
 
@@ -34,11 +34,72 @@ definition
 				events cardinality matches {1..*; unordered} matches {
 					EVENT[at0002] occurrences matches {0..*} matches {    -- Any event
 						data matches {
-							ITEM_TREE[at0003] matches {*}    -- Tree
+							ITEM_TREE[at0003] matches {    -- Tree
+								items cardinality matches {0..*; unordered} matches {
+									ELEMENT[at0004] matches {    -- single_hop
+										value matches {
+											C_DV_QUANTITY <
+												property = <[openehr::122]>
+												list = <
+													["1"] = <
+														units = <"cm">
+													>
+												>
+											>
+										}
+									}
+									ELEMENT[at0005] matches {    -- triple_hop
+										value matches {
+											C_DV_QUANTITY <
+												property = <[openehr::122]>
+												list = <
+													["1"] = <
+														units = <"cm">
+													>
+												>
+											>
+										}
+									}
+									ELEMENT[at0008] matches {    -- crossover_hop
+										value matches {
+											C_DV_QUANTITY <
+												property = <[openehr::122]>
+												list = <
+													["1"] = <
+														units = <"cm">
+													>
+												>
+											>
+										}
+									}
+									ELEMENT[at0009] matches {    -- 6meter_timed_hop
+										value matches {
+											C_DV_QUANTITY <
+												property = <[openehr::128]>
+												list = <
+													["1"] = <
+														units = <"s">
+													>
+												>
+											>
+										}
+									}
+									ELEMENT[at0010] matches {    -- indice_simetria_global
+										value matches {
+											DV_PROPORTION matches {
+												precision matches {|1|}
+											}
+										}
+									}
+								}
+							}
 						}
 					}
 				}
 			}
+		}
+		protocol matches {
+			ITEM_TREE[at0006] matches {*}    -- Item tree
 		}
 	}
 
@@ -61,6 +122,30 @@ ontology
 				["at0003"] = <
 					text = <"Tree">
 					description = <"@ internal @">
+				>
+				["at0004"] = <
+					text = <"single_hop">
+					description = <"">
+				>
+				["at0005"] = <
+					text = <"triple_hop">
+					description = <"">
+				>
+				["at0006"] = <
+					text = <"Item tree">
+					description = <"@ internal @">
+				>
+				["at0008"] = <
+					text = <"crossover_hop">
+					description = <"">
+				>
+				["at0009"] = <
+					text = <"6meter_timed_hop">
+					description = <"">
+				>
+				["at0010"] = <
+					text = <"indice_simetria_global">
+					description = <"umbral alta deportiva: ≥85% en todos">
 				>
 			>
 		>

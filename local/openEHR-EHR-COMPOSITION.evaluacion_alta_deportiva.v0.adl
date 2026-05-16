@@ -23,7 +23,7 @@ description
 		["original_namespace"] = <"org.openehr">
 		["original_publisher"] = <"openEHR Foundation">
 		["custodian_namespace"] = <"org.openehr">
-		["MD5-CAM-1.0.1"] = <"1fc66fc02abbb61ce233bed9d79bc54c">
+		["MD5-CAM-1.0.1"] = <"48bfd6c35bf67400b452ef53a55d1eff">
 		["build_uid"] = <"f921ca50-07f3-3c58-bdff-fd44e116f235">
 	>
 
@@ -54,11 +54,11 @@ definition
 									>
 								}
 							}
-							allow_archetype CLUSTER[at0003] occurrences matches {0..*} matches {    -- episodio_lca
+							allow_archetype CLUSTER[at0003] matches {    -- episodio_lca
 								include
 									archetype_id/value matches {/openEHR-EHR-CLUSTER\.episodio_lca\.v0/}
 							}
-							allow_archetype CLUSTER[at0010] occurrences matches {0..*} matches {    -- datos_paciente
+							allow_archetype CLUSTER[at0010] matches {    -- datos_paciente
 								include
 									archetype_id/value matches {/openEHR-EHR-CLUSTER\.datos_paciente\.v0/}
 							}
@@ -70,11 +70,11 @@ definition
 		content cardinality matches {1..*; unordered} matches {
 			SECTION[at0005] occurrences matches {0..1} matches {    -- Pruebas funcionales
 				items cardinality matches {1..*; unordered} matches {
-					allow_archetype OBSERVATION[at0006] occurrences matches {0..*} matches {    -- hop_tests
+					allow_archetype OBSERVATION[at0006] matches {    -- hop_tests
 						include
 							archetype_id/value matches {/openEHR-EHR-OBSERVATION\.hop_tests\.v0/}
 					}
-					allow_archetype OBSERVATION[at0007] occurrences matches {0..*} matches {    -- fuerza_muscular
+					allow_archetype OBSERVATION[at0007] matches {    -- fuerza_muscular
 						include
 							archetype_id/value matches {/openEHR-EHR-OBSERVATION\.fuerza_muscular\.v0/}
 					}
@@ -82,7 +82,7 @@ definition
 			}
 			SECTION[at0008] occurrences matches {0..1} matches {    -- Decisión de alta
 				items cardinality matches {1..*; unordered} matches {
-					allow_archetype EVALUATION[at0009] occurrences matches {0..*} matches {    -- alta_deportiva
+					allow_archetype EVALUATION[at0009] matches {    -- alta_deportiva
 						include
 							archetype_id/value matches {/openEHR-EHR-EVALUATION\.alta_deportiva\.v0/}
 					}

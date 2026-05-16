@@ -23,7 +23,7 @@ description
 		["original_namespace"] = <"org.openehr">
 		["original_publisher"] = <"openEHR Foundation">
 		["custodian_namespace"] = <"org.openehr">
-		["MD5-CAM-1.0.1"] = <"14aad026d757d084c73443ae5f3b1837">
+		["MD5-CAM-1.0.1"] = <"3bcac4eab46ee7d30b00be88c6294dc1">
 		["build_uid"] = <"c13ef362-9644-3a07-9fcf-dffbdccf34fd">
 	>
 
@@ -69,7 +69,7 @@ definition
 						include
 							archetype_id/value matches {/openEHR-EHR-OBSERVATION\.dolor_inflamacion\.v1/}
 					}
-					allow_archetype OBSERVATION[at0011] matches {    -- rango_movimiento_rodilla
+					allow_archetype OBSERVATION[at0011] matches {    -- rango_de_movimiento_rodilla
 						include
 							archetype_id/value matches {/openEHR-EHR-OBSERVATION\.rango_de_movimiento_rodilla\.v1/}
 					}
@@ -115,7 +115,7 @@ ontology
 					description = <"">
 				>
 				["at0011"] = <
-					text = <"rango_movimiento_rodilla">
+					text = <"rango_de_movimiento_rodilla">
 					description = <"">
 				>
 			>

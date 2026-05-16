@@ -25,12 +25,12 @@ description
 		["original_namespace"] = <"org.openehr">
 		["original_publisher"] = <"openEHR Foundation">
 		["custodian_namespace"] = <"org.openehr">
-		["MD5-CAM-1.0.1"] = <"0f45261eceb8e47b5dea212f09201d9e">
+		["MD5-CAM-1.0.1"] = <"8c63d0fe37e2b00643a3e720b01c34fb">
 		["build_uid"] = <"8eb312a6-f589-395f-baa4-17f24a02e3c5">
 	>
 
 definition
-	OBSERVATION[at0000] matches {    -- dolor_inflamacion
+	OBSERVATION[at0000] matches {    -- Dolor inflamación
 		data matches {
 			HISTORY[at0001] matches {    -- History
 				events cardinality matches {1..*; unordered} matches {
@@ -91,7 +91,7 @@ ontology
 		["es"] = <
 			items = <
 				["at0000"] = <
-					text = <"dolor_inflamacion">
+					text = <"Dolor inflamación">
 					description = <"Dolor e inflamación rodilla">
 				>
 				["at0001"] = <

@@ -26,7 +26,7 @@ description
 		["original_namespace"] = <"org.openehr">
 		["original_publisher"] = <"openEHR Foundation">
 		["custodian_namespace"] = <"org.openehr">
-		["MD5-CAM-1.0.1"] = <"e55e531910ddc0e4d724f3970d005e14">
+		["MD5-CAM-1.0.1"] = <"063a3280fcc6ac44eee09c75032ea760">
 		["build_uid"] = <"c346df1a-9897-3bfb-a4ce-f4e8352f3696">
 	>
 
@@ -52,7 +52,7 @@ definition
 											}
 										}
 									}
-									ELEMENT[at0043] occurrences matches {0..1} matches {    -- Fuerza lado operado
+									ELEMENT[at0043] matches {    -- Fuerza lado operado
 										value matches {
 											C_DV_QUANTITY <
 												
@@ -68,7 +68,7 @@ definition
 											>
 										}
 									}
-									ELEMENT[at0055] occurrences matches {0..1} matches {    -- Fuerza lado sano
+									ELEMENT[at0055] matches {    -- Fuerza lado sano
 										value matches {
 											C_DV_QUANTITY <
 												
@@ -84,7 +84,7 @@ definition
 											>
 										}
 									}
-									ELEMENT[at0044] occurrences matches {0..1} matches {    -- Ratio de simetría
+									ELEMENT[at0044] matches {    -- Ratio de simetría
 										value matches {
 											C_DV_QUANTITY <
 												property = <[openehr::507]>

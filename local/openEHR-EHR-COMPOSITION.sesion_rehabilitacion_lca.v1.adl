@@ -23,8 +23,8 @@ description
 		["original_namespace"] = <"org.openehr">
 		["original_publisher"] = <"openEHR Foundation">
 		["custodian_namespace"] = <"org.openehr">
+		["MD5-CAM-1.0.1"] = <"f2737031e440e2af6a54fa4d03de8bf3">
 		["build_uid"] = <"f5e4360e-6776-3ddd-9872-5c753a487c0c">
-		["MD5-CAM-1.0.1"] = <"853e97382a7546535b76460e69cf4dd9">
 	>
 
 definition
@@ -54,11 +54,11 @@ definition
 									>
 								}
 							}
-							allow_archetype CLUSTER[at0004] matches {    -- Episodio LCA
+							allow_archetype CLUSTER[at0004] matches {    -- episodio_lca
 								include
 									archetype_id/value matches {/openEHR-EHR-CLUSTER\.episodio_lca\.v0/}
 							}
-							allow_archetype CLUSTER[at0005] occurrences matches {0..1} matches {    -- Datos del paciente
+							allow_archetype CLUSTER[at0005] occurrences matches {0..1} matches {    -- datos_paciente
 								include
 									archetype_id/value matches {/openEHR-EHR-CLUSTER\.datos_paciente\.v0/}
 							}
@@ -70,21 +70,21 @@ definition
 		content cardinality matches {1..*; unordered} matches {
 			SECTION[at0006] matches {    -- Estado clínico
 				items cardinality matches {1..*; unordered} matches {
-					allow_archetype OBSERVATION[at0007] matches {    -- Dolor e inflamación
+					allow_archetype OBSERVATION[at0007] matches {    -- dolor_inflamacion
 						include
-							archetype_id/value matches {/openEHR-EHR-OBSERVATION\.dolor_inflamacion_lca\.v1/}
+							archetype_id/value matches {/openEHR-EHR-OBSERVATION\.dolor_inflamacion\.v1/}
 					}
-					allow_archetype OBSERVATION[at0008] matches {    -- Rango de movimiento
+					allow_archetype OBSERVATION[at0008] matches {    -- rango_de_movimiento_rodilla
 						include
-							archetype_id/value matches {/openEHR-EHR-OBSERVATION\.range_of_motion_rodilla_lca\.v1/}
+							archetype_id/value matches {/openEHR-EHR-OBSERVATION\.rango_de_movimiento_rodilla\.v1/}
 					}
 				}
 			}
 			SECTION[at0009] occurrences matches {0..1} matches {    -- Fuerza muscular
 				items cardinality matches {1..*; unordered} matches {
-					allow_archetype OBSERVATION[at0010] occurrences matches {0..*} matches {    -- Evaluación de fuerza
+					allow_archetype OBSERVATION[at0010] occurrences matches {0..*} matches {    -- fuerza_muscular
 						include
-							archetype_id/value matches {/.*/}
+							archetype_id/value matches {/openEHR-EHR-OBSERVATION\.fuerza_muscular\.v0/}
 					}
 				}
 			}
@@ -108,11 +108,11 @@ ontology
 					description = <"Número de semanas transcurridas desde la cirugía de reconstrucción del LCA. Se calcula desde la fecha de cirugía registrada en el episodio.">
 				>
 				["at0004"] = <
-					text = <"Episodio LCA">
+					text = <"episodio_lca">
 					description = <"Referencia al episodio de cuidado LCA que vincula todas las sesiones del mismo paciente">
 				>
 				["at0005"] = <
-					text = <"Datos del paciente">
+					text = <"datos_paciente">
 					description = <"Información demográfica básica del paciente">
 				>
 				["at0006"] = <
@@ -120,11 +120,11 @@ ontology
 					description = <"Evaluación del estado clínico actual: dolor, inflamación y rango de movimiento">
 				>
 				["at0007"] = <
-					text = <"Dolor e inflamación">
+					text = <"dolor_inflamacion">
 					description = <"Registro del dolor (EVA) e inflamación de la rodilla">
 				>
 				["at0008"] = <
-					text = <"Rango de movimiento">
+					text = <"rango_de_movimiento_rodilla">
 					description = <"Medición del rango de movimiento de la rodilla (flexión y extensión)">
 				>
 				["at0009"] = <
@@ -132,7 +132,7 @@ ontology
 					description = <"Evaluación de la fuerza muscular (cuádriceps e isquiotibiales). Solo se registra desde la semana 4 en adelante.">
 				>
 				["at0010"] = <
-					text = <"Evaluación de fuerza">
+					text = <"fuerza_muscular">
 					description = <"Medición de la fuerza muscular del cuádriceps e isquiotibiales">
 				>
 			>

@@ -23,7 +23,7 @@ description
 		["original_namespace"] = <"org.openehr">
 		["original_publisher"] = <"openEHR Foundation">
 		["custodian_namespace"] = <"org.openehr">
-		["MD5-CAM-1.0.1"] = <"7dd9a37433bbeddb1b639508f15c0887">
+		["MD5-CAM-1.0.1"] = <"cd3ebb45e00d7eb8319e24c29d88e2bb">
 		["build_uid"] = <"c13ef362-9644-3a07-9fcf-dffbdccf34fd">
 	>
 
@@ -41,7 +41,7 @@ definition
 				other_context matches {
 					ITEM_TREE[at0001] matches {    -- Item tree
 						items cardinality matches {0..*; unordered} matches {
-							allow_archetype CLUSTER[at0003] occurrences matches {0..*} matches {    -- Datos del paciente
+							allow_archetype CLUSTER[at0003] occurrences matches {0..*} matches {    -- datos_paciente
 								include
 									archetype_id/value matches {/openEHR-EHR-CLUSTER\.datos_paciente\.v0/}
 							}
@@ -67,11 +67,11 @@ definition
 				items cardinality matches {1..*; unordered} matches {
 					allow_archetype OBSERVATION[at0010] occurrences matches {0..*} matches {    -- dolor_inflamacion
 						include
-							archetype_id/value matches {/openEHR-EHR-OBSERVATION\.dolor_inflamacion_lca\.v1/}
+							archetype_id/value matches {/openEHR-EHR-OBSERVATION\.dolor_inflamacion\.v1/}
 					}
-					allow_archetype OBSERVATION[at0011] occurrences matches {0..*} matches {    -- range_of_motion_rodilla_lca
+					allow_archetype OBSERVATION[at0011] occurrences matches {0..*} matches {    -- rango_de_movimiento_rodilla
 						include
-							archetype_id/value matches {/openEHR-EHR-OBSERVATION\.range_of_motion_rodilla_lca\.v1/}
+							archetype_id/value matches {/openEHR-EHR-OBSERVATION\.rango_de_movimiento_rodilla\.v1/}
 					}
 				}
 			}
@@ -91,7 +91,7 @@ ontology
 					description = <"@ internal @">
 				>
 				["at0003"] = <
-					text = <"Datos del paciente">
+					text = <"datos_paciente">
 					description = <"">
 				>
 				["at0005"] = <
@@ -115,7 +115,7 @@ ontology
 					description = <"">
 				>
 				["at0011"] = <
-					text = <"range_of_motion_rodilla_lca">
+					text = <"rango_de_movimiento_rodilla">
 					description = <"">
 				>
 			>

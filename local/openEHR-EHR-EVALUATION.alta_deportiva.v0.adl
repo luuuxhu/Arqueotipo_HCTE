@@ -23,12 +23,12 @@ description
 		["original_namespace"] = <"org.openehr">
 		["original_publisher"] = <"openEHR Foundation">
 		["custodian_namespace"] = <"org.openehr">
-		["MD5-CAM-1.0.1"] = <"32adb2d70ba3756caac69f3696997d35">
+		["MD5-CAM-1.0.1"] = <"c820bcfeac747860f3ba999dcb58f25a">
 		["build_uid"] = <"9cac4b4e-8c02-31df-bd70-a8cf510830e8">
 	>
 
 definition
-	EVALUATION[at0000] matches {    -- alta_deportiva
+	EVALUATION[at0000] matches {    -- Alta deportiva
 		data matches {
 			ITEM_TREE[at0001] matches {    -- Item tree
 				items cardinality matches {0..*; unordered} matches {
@@ -108,7 +108,7 @@ ontology
 		["es"] = <
 			items = <
 				["at0000"] = <
-					text = <"alta_deportiva">
+					text = <"Alta deportiva">
 					description = <"Criterios_Progresion">
 				>
 				["at0001"] = <

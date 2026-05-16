@@ -26,7 +26,7 @@ description
 		["original_namespace"] = <"org.openehr">
 		["original_publisher"] = <"openEHR Foundation">
 		["custodian_namespace"] = <"org.openehr">
-		["MD5-CAM-1.0.1"] = <"e8fb997c2665b8933cf5781bf63181f0">
+		["MD5-CAM-1.0.1"] = <"f90aaba1ec13990fed596853845f508a">
 		["build_uid"] = <"c346df1a-9897-3bfb-a4ce-f4e8352f3696">
 	>
 
@@ -65,6 +65,19 @@ definition
 											>
 										}
 									}
+									ELEMENT[at0015] occurrences matches {0..1} matches {    -- Flexión lado sano
+										value matches {
+											C_DV_QUANTITY <
+												property = <[openehr::497]>
+												list = <
+													["1"] = <
+														units = <"deg">
+														magnitude = <|0.0..180.0|>
+													>
+												>
+											>
+										}
+									}
 									ELEMENT[at0006] occurrences matches {0..1} matches {    -- Déficit de extensión
 										value matches {
 											C_DV_QUANTITY <
@@ -78,18 +91,7 @@ definition
 											>
 										}
 									}
-									ELEMENT[at0007] matches {    -- Lateralidad
-										value matches {
-											DV_CODED_TEXT matches {
-												defining_code matches {
-													[local::
-													at0008,    -- Izquierda
-													at0009]    -- Derecha
-												}
-											}
-										}
-									}
-									ELEMENT[at0010] occurrences matches {0..1} matches {    -- Comentarios
+									ELEMENT[at0010] occurrences matches {0..1} matches {    -- Observaciones clínicas
 										value matches {
 											DV_TEXT matches {*}
 										}
@@ -104,7 +106,7 @@ definition
 		protocol matches {
 			ITEM_TREE[at0011] matches {    -- Item tree
 				items cardinality matches {0..*; unordered} matches {
-					ELEMENT[at0012] occurrences matches {0..1} matches {    -- Tipo de medición
+					ELEMENT[at0012] matches {    -- Tipo de medición
 						value matches {
 							DV_CODED_TEXT matches {
 								defining_code matches {
@@ -152,20 +154,8 @@ ontology
 					text = <"Déficit de extensión">
 					description = <"Diferencia en grados respecto a la extensión completa (0°). Un déficit de 5° significa que el paciente solo extiende hasta 5°. Se calcula automáticamente o se mide directamente.">
 				>
-				["at0007"] = <
-					text = <"Lateralidad">
-					description = <"Indica si la medición corresponde a la rodilla izquierda o derecha">
-				>
-				["at0008"] = <
-					text = <"Izquierda">
-					description = <"Rodilla izquierda">
-				>
-				["at0009"] = <
-					text = <"Derecha">
-					description = <"Rodilla derecha">
-				>
 				["at0010"] = <
-					text = <"Comentarios">
+					text = <"Observaciones clínicas">
 					description = <"Observaciones adicionales sobre la medición del rango de movimiento">
 				>
 				["at0011"] = <
@@ -183,6 +173,10 @@ ontology
 				["at0014"] = <
 					text = <"Pasiva">
 					description = <"Movilización realizada por el fisioterapeuta">
+				>
+				["at0015"] = <
+					text = <"Flexión lado sano">
+					description = <"Grados de flexión activa de la rodilla. Valor normal: 135-140°. Objetivo en rehabilitación LCA: ≥125°">
 				>
 			>
 		>

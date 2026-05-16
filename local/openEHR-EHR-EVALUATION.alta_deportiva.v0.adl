@@ -23,12 +23,115 @@ description
 		["original_namespace"] = <"org.openehr">
 		["original_publisher"] = <"openEHR Foundation">
 		["custodian_namespace"] = <"org.openehr">
-		["MD5-CAM-1.0.1"] = <"3f2d8c1da545eb338232c551f40423f5">
+		["MD5-CAM-1.0.1"] = <"bf6411ea340998676d4eb7493bcc55ca">
 		["build_uid"] = <"9cac4b4e-8c02-31df-bd70-a8cf510830e8">
 	>
 
 definition
-	EVALUATION[at0000] matches {*}    -- alta_deportiva
+	EVALUATION[at0000] matches {    -- alta_deportiva
+		data matches {
+			ITEM_TREE[at0001] matches {    -- Item tree
+				items cardinality matches {0..*; unordered} matches {
+					CLUSTER[at0002] occurrences matches {0..1} matches {    -- Criterios de alta cumplidos
+						items cardinality matches {1..*; unordered} matches {
+							ELEMENT[at0003] occurrences matches {0..1} matches {    -- Fuerza muscular ≥90%
+								value matches {
+									DV_CODED_TEXT matches {
+										defining_code matches {
+											[local::
+											at0004,    -- Sí
+											at0005]    -- No
+										}
+									}
+								}
+							}
+							ELEMENT[at0012] occurrences matches {0..1} matches {    -- Hop tests ≥85%
+								value matches {
+									DV_CODED_TEXT matches {
+										defining_code matches {
+											[local::
+											at0013,    -- Sí
+											at0014]    -- No
+										}
+									}
+								}
+							}
+							ELEMENT[at0015] occurrences matches {0..1} matches {    -- Test de Lachman negativo
+								value matches {
+									DV_CODED_TEXT matches {
+										defining_code matches {
+											[local::
+											at0016,    -- Sí
+											at0017]    -- No
+										}
+									}
+								}
+							}
+							ELEMENT[at0018] occurrences matches {0..1} matches {    -- Rango de movimiento completo
+								value matches {
+									DV_CODED_TEXT matches {
+										defining_code matches {
+											[local::
+											at0019,    -- Sí
+											at0020]    -- No
+										}
+									}
+								}
+							}
+							ELEMENT[at0021] occurrences matches {0..1} matches {    -- Ausencia de inflamación
+								value matches {
+									DV_CODED_TEXT matches {
+										defining_code matches {
+											[local::
+											at0022,    -- Sí
+											at0023]    -- No
+										}
+									}
+								}
+							}
+						}
+					}
+					ELEMENT[at0024] occurrences matches {0..1} matches {    -- Puntuación ACL-RSI
+						value matches {
+							C_DV_QUANTITY <
+								property = <[openehr::507]>
+								list = <
+									["1"] = <
+										units = <"1">
+										magnitude = <|0.0..100.0|>
+										precision = <|0|>
+									>
+								>
+							>
+						}
+					}
+					ELEMENT[at0025] occurrences matches {0..1} matches {    -- Decisión de alta deportiva
+						value matches {
+							DV_CODED_TEXT matches {
+								defining_code matches {
+									[local::
+									at0026,    -- Apto para retorno deportivo completo
+									at0027,    -- Apto con restricciones
+									at0028,    -- No apto — requiere continuar rehabilitación
+									at0029]    -- No apto — requiere revisión médica
+								}
+							}
+						}
+					}
+					ELEMENT[at0030] occurrences matches {0..1} matches {    -- Fecha estimada de retorno deportivo
+						value matches {
+							DV_DATE matches {*}
+						}
+					}
+					ELEMENT[at0031] occurrences matches {0..1} matches {    -- Observaciones clínicas
+						value matches {
+							DV_TEXT matches {*}
+						}
+					}
+				}
+			}
+		}
+	}
 
 ontology
 	term_definitions = <
@@ -37,6 +140,106 @@ ontology
 				["at0000"] = <
 					text = <"alta_deportiva">
 					description = <"Criterios_Progresion">
+				>
+				["at0001"] = <
+					text = <"Item tree">
+					description = <"@ internal @">
+				>
+				["at0002"] = <
+					text = <"Criterios de alta cumplidos">
+					description = <"Conjunto de criterios objetivos que deben cumplirse simultáneamente para autorizar el retorno a la actividad deportiva.">
+				>
+				["at0003"] = <
+					text = <"Fuerza muscular ≥90%">
+					description = <"Ratio de simetría de fuerza del cuádriceps e isquiotibiales igual o superior al 90% respecto al lado sano.">
+				>
+				["at0004"] = <
+					text = <"Sí">
+					description = <"">
+				>
+				["at0005"] = <
+					text = <"No">
+					description = <"">
+				>
+				["at0012"] = <
+					text = <"Hop tests ≥85%">
+					description = <"Índice de simetría igual o superior al 85% en todas las pruebas funcionales de salto.">
+				>
+				["at0013"] = <
+					text = <"Sí">
+					description = <"">
+				>
+				["at0014"] = <
+					text = <"No">
+					description = <"">
+				>
+				["at0015"] = <
+					text = <"Test de Lachman negativo">
+					description = <"Ausencia de laxitud anteroposterior significativa en la exploración física.">
+				>
+				["at0016"] = <
+					text = <"Sí">
+					description = <"">
+				>
+				["at0017"] = <
+					text = <"No">
+					description = <"">
+				>
+				["at0018"] = <
+					text = <"Rango de movimiento completo">
+					description = <"Flexión mayor de 125 grados y extensión completa de 0 grados respecto al lado sano.">
+				>
+				["at0019"] = <
+					text = <"Sí">
+					description = <"">
+				>
+				["at0020"] = <
+					text = <"No">
+					description = <"">
+				>
+				["at0021"] = <
+					text = <"Ausencia de inflamación">
+					description = <"Perímetro de rodilla simétrico respecto al lado sano y ausencia de derrame articular.">
+				>
+				["at0022"] = <
+					text = <"Sí">
+					description = <"">
+				>
+				["at0023"] = <
+					text = <"No">
+					description = <"">
+				>
+				["at0024"] = <
+					text = <"Puntuación ACL-RSI">
+					description = <"Resultado del cuestionario ACL-Return to Sport after Injury que evalúa la preparación psicológica del paciente para el retorno deportivo.">
+				>
+				["at0025"] = <
+					text = <"Decisión de alta deportiva">
+					description = <"Valoración clínica final sobre la aptitud del paciente para el retorno a la actividad deportiva previa a la lesión.">
+				>
+				["at0026"] = <
+					text = <"Apto para retorno deportivo completo">
+					description = <"">
+				>
+				["at0027"] = <
+					text = <"Apto con restricciones">
+					description = <"">
+				>
+				["at0028"] = <
+					text = <"No apto — requiere continuar rehabilitación">
+					description = <"">
+				>
+				["at0029"] = <
+					text = <"No apto — requiere revisión médica">
+					description = <"">
+				>
+				["at0030"] = <
+					text = <"Fecha estimada de retorno deportivo">
+					description = <"Fecha aproximada en la que se prevé que el paciente pueda retomar la actividad deportiva completa.">
+				>
+				["at0031"] = <
+					text = <"Observaciones clínicas">
+					description = <"Anotaciones adicionales del profesional sobre el estado del paciente o condiciones específicas para el retorno deportivo.">
 				>
 			>
 		>

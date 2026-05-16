@@ -23,7 +23,7 @@ description
 		["original_namespace"] = <"org.openehr">
 		["original_publisher"] = <"openEHR Foundation">
 		["custodian_namespace"] = <"org.openehr">
-		["MD5-CAM-1.0.1"] = <"a604b3829d1bf9f455f23f1c10f43f20">
+		["MD5-CAM-1.0.1"] = <"69db54a6c21462761cce38b3373a1474">
 		["build_uid"] = <"97c50852-25b5-36a8-836d-da51c80f7fd8">
 	>
 
@@ -61,7 +61,26 @@ definition
 			}
 		}
 		content cardinality matches {1..*; unordered} matches {
-			SECTION[at0005] occurrences matches {0..1} matches {*}    -- Exploración_física
+			SECTION[at0005] occurrences matches {0..1} matches {    -- Exploración_física
+				items cardinality matches {1..*; unordered} matches {
+					allow_archetype OBSERVATION[at0011] occurrences matches {0..*} matches {    -- estabilidad_articular
+						include
+							archetype_id/value matches {/.*|openEHR-EHR-OBSERVATION\.estabilidad_articular_lca\.v0/}
+					}
+					allow_archetype OBSERVATION[at0012] occurrences matches {0..*} matches {    -- range_of_motion_rodilla
+						include
+							archetype_id/value matches {/.*|openEHR-EHR-OBSERVATION\.range_of_motion_rodilla_lca\.v1/}
+					}
+				}
+			}
+			SECTION[at0013] occurrences matches {0..1} matches {    -- Valoración y decisión
+				items cardinality matches {1..*; unordered} matches {
+					allow_archetype EVALUATION[at0014] occurrences matches {0..*} matches {    -- criterios_progresion
+						include
+							archetype_id/value matches {/.*|openEHR-EHR-EVALUATION\.criterios_progresion\.v0/}
+					}
+				}
+			}
 		}
 	}
 
@@ -91,6 +110,22 @@ ontology
 				>
 				["at0005"] = <
 					text = <"Exploración_física">
+					description = <"">
+				>
+				["at0011"] = <
+					text = <"estabilidad_articular">
+					description = <"">
+				>
+				["at0012"] = <
+					text = <"range_of_motion_rodilla">
+					description = <"">
+				>
+				["at0013"] = <
+					text = <"Valoración y decisión">
+					description = <"">
+				>
+				["at0014"] = <
+					text = <"criterios_progresion">
 					description = <"">
 				>
 			>

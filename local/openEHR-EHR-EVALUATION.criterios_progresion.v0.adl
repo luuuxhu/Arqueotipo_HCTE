@@ -23,12 +23,79 @@ description
 		["original_namespace"] = <"org.openehr">
 		["original_publisher"] = <"openEHR Foundation">
 		["custodian_namespace"] = <"org.openehr">
-		["MD5-CAM-1.0.1"] = <"76475167c840829ff5e17b285bcc2a8f">
+		["MD5-CAM-1.0.1"] = <"5317673cbf678343d9f5296eb1475165">
 		["build_uid"] = <"9cac4b4e-8c02-31df-bd70-a8cf510830e8">
 	>
 
 definition
-	EVALUATION[at0000] matches {*}    -- Criterios_Progresion
+	EVALUATION[at0000] matches {    -- Criterios_Progresion
+		data matches {
+			ITEM_TREE[at0001] matches {    -- Item tree
+				items cardinality matches {0..*; unordered} matches {
+					ELEMENT[at0002] matches {    -- Fase_actual
+						value matches {
+							DV_CODED_TEXT matches {
+								defining_code matches {
+									[local::
+									at0003,    -- Fase 1
+									at0004,    -- Fase 2
+									at0005]    -- Fase 3
+								}
+							}
+						}
+					}
+					ELEMENT[at0009] matches {    -- EVA < 5
+						value matches {
+							DV_BOOLEAN matches {*}
+						}
+					}
+					ELEMENT[at0010] matches {    -- Extensión_completa
+						value matches {
+							DV_BOOLEAN matches {*}
+						}
+					}
+					ELEMENT[at0011] matches {    -- Flexión_suficiente
+						value matches {
+							DV_BOOLEAN matches {*}
+						}
+					}
+					ELEMENT[at0012] matches {    -- Fuerza >70%
+						value matches {
+							DV_BOOLEAN matches {*}
+						}
+					}
+					ELEMENT[at0013] matches {    -- Ausencia_inflamación
+						value matches {
+							DV_BOOLEAN matches {*}
+						}
+					}
+				}
+			}
+		}
+		protocol matches {
+			ITEM_TREE[at0014] matches {    -- Item tree
+				items cardinality matches {0..*; unordered} matches {
+					ELEMENT[at0015] matches {    -- Decisión_clínica
+						value matches {
+							DV_CODED_TEXT matches {
+								defining_code matches {
+									[local::
+									at0016,    -- Avanzar de fase
+									at0017,    -- Mantener fase
+									at0018]    -- Modificar protocolo
+								}
+							}
+						}
+					}
+					ELEMENT[at0019] occurrences matches {0..1} matches {    -- Observaciones
+						value matches {
+							DV_TEXT matches {*}
+						}
+					}
+				}
+			}
+		}
+	}
 
 ontology
 	term_definitions = <
@@ -37,6 +104,70 @@ ontology
 				["at0000"] = <
 					text = <"Criterios_Progresion">
 					description = <"Criterios_Progresion">
+				>
+				["at0001"] = <
+					text = <"Item tree">
+					description = <"@ internal @">
+				>
+				["at0002"] = <
+					text = <"Fase_actual">
+					description = <"">
+				>
+				["at0003"] = <
+					text = <"Fase 1">
+					description = <"">
+				>
+				["at0004"] = <
+					text = <"Fase 2">
+					description = <"">
+				>
+				["at0005"] = <
+					text = <"Fase 3">
+					description = <"">
+				>
+				["at0009"] = <
+					text = <"EVA < 5">
+					description = <"">
+				>
+				["at0010"] = <
+					text = <"Extensión_completa">
+					description = <"">
+				>
+				["at0011"] = <
+					text = <"Flexión_suficiente">
+					description = <"">
+				>
+				["at0012"] = <
+					text = <"Fuerza >70%">
+					description = <"">
+				>
+				["at0013"] = <
+					text = <"Ausencia_inflamación">
+					description = <"">
+				>
+				["at0014"] = <
+					text = <"Item tree">
+					description = <"@ internal @">
+				>
+				["at0015"] = <
+					text = <"Decisión_clínica">
+					description = <"">
+				>
+				["at0016"] = <
+					text = <"Avanzar de fase">
+					description = <"">
+				>
+				["at0017"] = <
+					text = <"Mantener fase">
+					description = <"">
+				>
+				["at0018"] = <
+					text = <"Modificar protocolo">
+					description = <"">
+				>
+				["at0019"] = <
+					text = <"Observaciones">
+					description = <"">
 				>
 			>
 		>

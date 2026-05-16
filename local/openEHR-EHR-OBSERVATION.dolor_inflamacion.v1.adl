@@ -25,7 +25,7 @@ description
 		["original_namespace"] = <"org.openehr">
 		["original_publisher"] = <"openEHR Foundation">
 		["custodian_namespace"] = <"org.openehr">
-		["MD5-CAM-1.0.1"] = <"f18c565660bdcbac81f32929b422fe5f">
+		["MD5-CAM-1.0.1"] = <"57ce5a0bca3f3a04b070d30fae3a9a7f">
 		["build_uid"] = <"8eb312a6-f589-395f-baa4-17f24a02e3c5">
 	>
 
@@ -69,7 +69,7 @@ definition
 											DV_BOOLEAN matches {*}
 										}
 									}
-									ELEMENT[at0007] occurrences matches {0..1} matches {    -- Comentarios adicionales
+									ELEMENT[at0007] occurrences matches {0..1} matches {    -- Observaciones clínicas
 										value matches {
 											DV_TEXT matches {*}
 										}
@@ -134,7 +134,7 @@ ontology
 					description = <"Valoración clínica de la presencia o ausencia de inflamación visible en la rodilla">
 				>
 				["at0007"] = <
-					text = <"Comentarios adicionales">
+					text = <"Observaciones clínicas">
 					description = <"Observaciones adicionales sobre el dolor o la inflamación">
 				>
 				["at0008"] = <

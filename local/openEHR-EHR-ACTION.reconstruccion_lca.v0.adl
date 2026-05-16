@@ -23,16 +23,16 @@ description
 		["original_namespace"] = <"org.openehr">
 		["original_publisher"] = <"openEHR Foundation">
 		["custodian_namespace"] = <"org.openehr">
-		["MD5-CAM-1.0.1"] = <"610849cc713920e51afa8ec2e5d7b8f7">
+		["MD5-CAM-1.0.1"] = <"44391ec3b6e56480576fe293fc7f9042">
 		["build_uid"] = <"c2ef1409-2a31-334e-93cc-9131d3db37dc">
 	>
 
 definition
-	ACTION[at0000] matches {    -- Reconstruccion_lca
+	ACTION[at0000] matches {    -- Reconstrucción LCA
 		description matches {
 			ITEM_TREE[at0001] matches {    -- Item tree
 				items cardinality matches {0..*; unordered} matches {
-					ELEMENT[at0003] occurrences matches {0..1} matches {    -- Técnica quirúrgica
+					ELEMENT[at0003] matches {    -- Técnica quirúrgica
 						value matches {
 							DV_CODED_TEXT matches {
 								defining_code matches {
@@ -44,7 +44,7 @@ definition
 							}
 						}
 					}
-					ELEMENT[at0007] occurrences matches {0..1} matches {    -- Tipo de injerto
+					ELEMENT[at0007] matches {    -- Tipo de injerto
 						value matches {
 							DV_CODED_TEXT matches {
 								defining_code matches {
@@ -57,7 +57,7 @@ definition
 							}
 						}
 					}
-					ELEMENT[at0012] occurrences matches {0..1} matches {    -- Lado intervenido
+					ELEMENT[at0012] matches {    -- Lado intervenido
 						value matches {
 							DV_CODED_TEXT matches {
 								defining_code matches {
@@ -101,7 +101,12 @@ definition
 		protocol matches {
 			ITEM_TREE[at0002] matches {    -- Item tree
 				items cardinality matches {0..*; unordered} matches {
-					ELEMENT[at0026] occurrences matches {0..1} matches {    -- Cirujano responsable
+					ELEMENT[at0026] matches {    -- Cirujano responsable
+						value matches {
+							DV_TEXT matches {*}
+						}
+					}
+					ELEMENT[at0028] matches {    -- Centro sanitario
 						value matches {
 							DV_TEXT matches {*}
 						}
@@ -129,7 +134,7 @@ ontology
 		["es"] = <
 			items = <
 				["at0000"] = <
-					text = <"Reconstruccion_lca">
+					text = <"Reconstrucción LCA">
 					description = <"Reconstruccion_lca">
 				>
 				["at0001"] = <
@@ -238,6 +243,10 @@ ontology
 				>
 				["at0027"] = <
 					text = <"Duración del procedimiento">
+					description = <"">
+				>
+				["at0028"] = <
+					text = <"Centro sanitario">
 					description = <"">
 				>
 			>

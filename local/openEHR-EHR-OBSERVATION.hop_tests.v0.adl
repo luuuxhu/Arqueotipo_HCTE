@@ -23,7 +23,7 @@ description
 		["original_namespace"] = <"org.openehr">
 		["original_publisher"] = <"openEHR Foundation">
 		["custodian_namespace"] = <"org.openehr">
-		["MD5-CAM-1.0.1"] = <"ca355ab33a76775a4907b3f280675d2c">
+		["MD5-CAM-1.0.1"] = <"2806148c01c2e94c14fea3423cef63d0">
 		["build_uid"] = <"b2be7aab-46ee-3769-a139-ae623a4bac34">
 	>
 
@@ -36,7 +36,7 @@ definition
 						data matches {
 							ITEM_TREE[at0003] matches {    -- Tree
 								items cardinality matches {0..*; unordered} matches {
-									CLUSTER[at0011] occurrences matches {0..1} matches {    -- Resultado de prueba
+									CLUSTER[at0011] occurrences matches {0..*} matches {    -- Resultado de prueba
 										items cardinality matches {1..*; unordered} matches {
 											ELEMENT[at0012] matches {    -- Tipo de prueba
 												value matches {

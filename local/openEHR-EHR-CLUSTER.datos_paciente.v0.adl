@@ -23,23 +23,13 @@ description
 		["original_namespace"] = <"org.openehr">
 		["original_publisher"] = <"openEHR Foundation">
 		["custodian_namespace"] = <"org.openehr">
-		["MD5-CAM-1.0.1"] = <"831abe5fcab49fd65861ed678649ee30">
+		["MD5-CAM-1.0.1"] = <"c311cadc52ddbf1d68545c218f292791">
 		["build_uid"] = <"a586b415-3bf0-3341-91f8-803c1575b858">
 	>
 
 definition
-	CLUSTER[at0000] matches {    -- datos_paciente
+	CLUSTER[at0000] matches {    -- Datos del paciente
 		items cardinality matches {1..*; unordered} matches {
-			ELEMENT[at0003] matches {    -- ID_paciente
-				value matches {
-					DV_IDENTIFIER matches {*}
-				}
-			}
-			ELEMENT[at0002] matches {    -- NombreCompleto
-				value matches {
-					DV_TEXT matches {*}
-				}
-			}
 			ELEMENT[at0001] matches {    -- FechaNacimiento
 				value matches {
 					DV_DATE matches {
@@ -49,10 +39,21 @@ definition
 			}
 			ELEMENT[at0008] matches {    -- Sexo
 				value matches {
-					DV_CODED_TEXT matches {*}
+					DV_CODED_TEXT matches {
+						defining_code matches {
+							[local::
+							at0010,    -- Hombre
+							at0011]    -- Mujer
+						}
+					}
 				}
 				name matches {
 					DV_CODED_TEXT matches {*}
+				}
+			}
+			ELEMENT[at0009] occurrences matches {0..1} matches {    -- Deporte practicado
+				value matches {
+					DV_TEXT matches {*}
 				}
 			}
 		}
@@ -63,23 +64,27 @@ ontology
 		["es"] = <
 			items = <
 				["at0000"] = <
-					text = <"datos_paciente">
+					text = <"Datos del paciente">
 					description = <"datos_paciente">
 				>
 				["at0001"] = <
 					text = <"FechaNacimiento">
 					description = <"">
 				>
-				["at0002"] = <
-					text = <"NombreCompleto">
-					description = <"">
-				>
-				["at0003"] = <
-					text = <"ID_paciente">
-					description = <"">
-				>
 				["at0008"] = <
 					text = <"Sexo">
+					description = <"">
+				>
+				["at0009"] = <
+					text = <"Deporte practicado">
+					description = <"">
+				>
+				["at0010"] = <
+					text = <"Hombre">
+					description = <"">
+				>
+				["at0011"] = <
+					text = <"Mujer">
 					description = <"">
 				>
 			>

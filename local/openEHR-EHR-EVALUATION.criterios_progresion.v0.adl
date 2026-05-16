@@ -23,7 +23,7 @@ description
 		["original_namespace"] = <"org.openehr">
 		["original_publisher"] = <"openEHR Foundation">
 		["custodian_namespace"] = <"org.openehr">
-		["MD5-CAM-1.0.1"] = <"4420ba96737fa40b4cf5ad30cc82a4ec">
+		["MD5-CAM-1.0.1"] = <"bcc2c2b8c6aad39df00356312aa163a8">
 		["build_uid"] = <"9cac4b4e-8c02-31df-bd70-a8cf510830e8">
 	>
 
@@ -44,7 +44,7 @@ definition
 							}
 						}
 					}
-					CLUSTER[at0020] occurrences matches {0..1} matches {    -- Criterios cumplidos
+					CLUSTER[at0020] matches {    -- Criterios cumplidos
 						items cardinality matches {1..*; unordered} matches {
 							ELEMENT[at0009] matches {    -- EVA < 5
 								value matches {
@@ -73,7 +73,7 @@ definition
 							}
 						}
 					}
-					ELEMENT[at0022] occurrences matches {0..1} matches {    -- Decisión clínica
+					ELEMENT[at0022] matches {    -- Decisión clínica
 						value matches {
 							DV_CODED_TEXT matches {
 								defining_code matches {
@@ -85,7 +85,7 @@ definition
 							}
 						}
 					}
-					ELEMENT[at0021] occurrences matches {0..1} matches {    -- Observaciones
+					ELEMENT[at0021] occurrences matches {0..1} matches {    -- Observaciones clínicas
 						value matches {
 							DV_TEXT matches {*}
 						}
@@ -155,7 +155,7 @@ ontology
 					description = <"">
 				>
 				["at0021"] = <
-					text = <"Observaciones">
+					text = <"Observaciones clínicas">
 					description = <"">
 				>
 				["at0022"] = <

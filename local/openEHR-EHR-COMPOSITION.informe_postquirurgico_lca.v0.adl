@@ -23,7 +23,7 @@ description
 		["original_namespace"] = <"org.openehr">
 		["original_publisher"] = <"openEHR Foundation">
 		["custodian_namespace"] = <"org.openehr">
-		["MD5-CAM-1.0.1"] = <"466f00e9a1a64f94b65467ad71773ec2">
+		["MD5-CAM-1.0.1"] = <"48700cef8ec7c6bdfcf2c563184ec340">
 		["build_uid"] = <"c13ef362-9644-3a07-9fcf-dffbdccf34fd">
 	>
 
@@ -37,7 +37,44 @@ definition
 			}
 		}
 		context matches {
-			EVENT_CONTEXT matches {*}
+			EVENT_CONTEXT matches {
+				other_context matches {
+					ITEM_TREE[at0001] matches {    -- Item tree
+						items cardinality matches {0..*; unordered} matches {
+							allow_archetype CLUSTER[at0003] occurrences matches {0..*} matches {    -- Datos del paciente
+								include
+									archetype_id/value matches {/openEHR-EHR-CLUSTER\.datos_paciente\.v0/}
+							}
+							allow_archetype CLUSTER[at0005] occurrences matches {0..*} matches {    -- Episodio_lca
+								include
+									archetype_id/value matches {/openEHR-EHR-CLUSTER\.episodio_lca\.v0/}
+							}
+						}
+					}
+				}
+			}
+		}
+		content cardinality matches {1..*; unordered} matches {
+			SECTION[at0007] occurrences matches {0..1} matches {    -- Contexto quirúrgico
+				items cardinality matches {1..*; unordered} matches {
+					allow_archetype ACTION[at0009] occurrences matches {0..*} matches {    -- reconstruccion_lca
+						include
+							archetype_id/value matches {/openEHR-EHR-ACTION\.reconstruccion_lca\.v0/}
+					}
+				}
+			}
+			SECTION[at0008] occurrences matches {0..1} matches {    -- Evaluación inicial
+				items cardinality matches {1..*; unordered} matches {
+					allow_archetype OBSERVATION[at0010] occurrences matches {0..*} matches {    -- dolor_inflamacion
+						include
+							archetype_id/value matches {/openEHR-EHR-OBSERVATION\.dolor_inflamacion_lca\.v1/}
+					}
+					allow_archetype OBSERVATION[at0011] occurrences matches {0..*} matches {    -- range_of_motion_rodilla_lca
+						include
+							archetype_id/value matches {/openEHR-EHR-OBSERVATION\.range_of_motion_rodilla_lca\.v1/}
+					}
+				}
+			}
 		}
 	}
 
@@ -48,6 +85,38 @@ ontology
 				["at0000"] = <
 					text = <"informe_postquirurgico_lca">
 					description = <"informe_postquirurgico_lca">
+				>
+				["at0001"] = <
+					text = <"Item tree">
+					description = <"@ internal @">
+				>
+				["at0003"] = <
+					text = <"Datos del paciente">
+					description = <"">
+				>
+				["at0005"] = <
+					text = <"Episodio_lca">
+					description = <"">
+				>
+				["at0007"] = <
+					text = <"Contexto quirúrgico">
+					description = <"Registro del procedimiento de reconstrucción del LCA realizado.">
+				>
+				["at0008"] = <
+					text = <"Evaluación inicial">
+					description = <"Valoración clínica inicial del paciente el día posterior a la cirugía.">
+				>
+				["at0009"] = <
+					text = <"reconstruccion_lca">
+					description = <"">
+				>
+				["at0010"] = <
+					text = <"dolor_inflamacion">
+					description = <"">
+				>
+				["at0011"] = <
+					text = <"range_of_motion_rodilla_lca">
+					description = <"">
 				>
 			>
 		>

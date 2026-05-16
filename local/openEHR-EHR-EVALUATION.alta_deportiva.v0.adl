@@ -23,7 +23,7 @@ description
 		["original_namespace"] = <"org.openehr">
 		["original_publisher"] = <"openEHR Foundation">
 		["custodian_namespace"] = <"org.openehr">
-		["MD5-CAM-1.0.1"] = <"c820bcfeac747860f3ba999dcb58f25a">
+		["MD5-CAM-1.0.1"] = <"22e34329f9331063267ddde0242a8844">
 		["build_uid"] = <"9cac4b4e-8c02-31df-bd70-a8cf510830e8">
 	>
 
@@ -32,7 +32,7 @@ definition
 		data matches {
 			ITEM_TREE[at0001] matches {    -- Item tree
 				items cardinality matches {0..*; unordered} matches {
-					CLUSTER[at0002] occurrences matches {0..1} matches {    -- Criterios de alta cumplidos
+					CLUSTER[at0002] matches {    -- Criterios de alta cumplidos
 						items cardinality matches {1..*; unordered} matches {
 							ELEMENT[at0032] matches {    -- Fuerza muscular ≥90%
 								value matches {
@@ -61,7 +61,7 @@ definition
 							}
 						}
 					}
-					ELEMENT[at0024] occurrences matches {0..1} matches {    -- Puntuación ACL-RSI
+					ELEMENT[at0024] matches {    -- Puntuación ACL-RSI
 						value matches {
 							C_DV_QUANTITY <
 								property = <[openehr::507]>
@@ -75,7 +75,7 @@ definition
 							>
 						}
 					}
-					ELEMENT[at0025] occurrences matches {0..1} matches {    -- Decisión de alta deportiva
+					ELEMENT[at0025] matches {    -- Decisión de alta deportiva
 						value matches {
 							DV_CODED_TEXT matches {
 								defining_code matches {
@@ -100,6 +100,9 @@ definition
 					}
 				}
 			}
+		}
+		protocol matches {
+			ITEM_TREE[at0037] matches {*}    -- Item tree
 		}
 	}
 
@@ -170,6 +173,10 @@ ontology
 				["at0036"] = <
 					text = <"Ausencia de inflamación">
 					description = <"">
+				>
+				["at0037"] = <
+					text = <"Item tree">
+					description = <"@ internal @">
 				>
 			>
 		>

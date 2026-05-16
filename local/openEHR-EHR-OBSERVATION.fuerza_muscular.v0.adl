@@ -26,12 +26,12 @@ description
 		["original_namespace"] = <"org.openehr">
 		["original_publisher"] = <"openEHR Foundation">
 		["custodian_namespace"] = <"org.openehr">
-		["MD5-CAM-1.0.1"] = <"cf5f59907a98f776e53f2e0dcbcf226b">
+		["MD5-CAM-1.0.1"] = <"e55e531910ddc0e4d724f3970d005e14">
 		["build_uid"] = <"c346df1a-9897-3bfb-a4ce-f4e8352f3696">
 	>
 
 definition
-	OBSERVATION[at0000] matches {    -- fuerza_muscular
+	OBSERVATION[at0000] matches {    -- Fuerza muscular
 		data matches {
 			HISTORY[at0001] matches {    -- History
 				events cardinality matches {1..*; unordered} matches {
@@ -153,7 +153,7 @@ ontology
 		["es"] = <
 			items = <
 				["at0000"] = <
-					text = <"fuerza_muscular">
+					text = <"Fuerza muscular">
 					description = <"range_of_motion_rodilla_lca">
 				>
 				["at0001"] = <

@@ -23,12 +23,12 @@ description
 		["original_namespace"] = <"org.openehr">
 		["original_publisher"] = <"openEHR Foundation">
 		["custodian_namespace"] = <"org.openehr">
-		["MD5-CAM-1.0.1"] = <"cd3ebb45e00d7eb8319e24c29d88e2bb">
+		["MD5-CAM-1.0.1"] = <"9e73d740835e5b862a4f01f165144e6d">
 		["build_uid"] = <"c13ef362-9644-3a07-9fcf-dffbdccf34fd">
 	>
 
 definition
-	COMPOSITION[at0000] matches {    -- Informe postquirúrgico
+	COMPOSITION[at0000] matches {    -- Informe postquirúrgico LCA
 		category matches {
 			DV_CODED_TEXT matches {
 				defining_code matches {
@@ -83,7 +83,7 @@ ontology
 		["es"] = <
 			items = <
 				["at0000"] = <
-					text = <"Informe postquirúrgico">
+					text = <"Informe postquirúrgico LCA">
 					description = <"informe_postquirurgico_lca">
 				>
 				["at0001"] = <

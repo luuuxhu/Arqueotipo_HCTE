@@ -23,7 +23,7 @@ description
 		["original_namespace"] = <"org.openehr">
 		["original_publisher"] = <"openEHR Foundation">
 		["custodian_namespace"] = <"org.openehr">
-		["MD5-CAM-1.0.1"] = <"5317673cbf678343d9f5296eb1475165">
+		["MD5-CAM-1.0.1"] = <"309008dd4cdd54451006be8fab76b4dc">
 		["build_uid"] = <"9cac4b4e-8c02-31df-bd70-a8cf510830e8">
 	>
 
@@ -44,29 +44,33 @@ definition
 							}
 						}
 					}
-					ELEMENT[at0009] matches {    -- EVA < 5
-						value matches {
-							DV_BOOLEAN matches {*}
-						}
-					}
-					ELEMENT[at0010] matches {    -- Extensión_completa
-						value matches {
-							DV_BOOLEAN matches {*}
-						}
-					}
-					ELEMENT[at0011] matches {    -- Flexión_suficiente
-						value matches {
-							DV_BOOLEAN matches {*}
-						}
-					}
-					ELEMENT[at0012] matches {    -- Fuerza >70%
-						value matches {
-							DV_BOOLEAN matches {*}
-						}
-					}
-					ELEMENT[at0013] matches {    -- Ausencia_inflamación
-						value matches {
-							DV_BOOLEAN matches {*}
+					CLUSTER[at0020] occurrences matches {0..1} matches {    -- Criterios cumplidos
+						items cardinality matches {1..*; unordered} matches {
+							ELEMENT[at0009] matches {    -- EVA < 5
+								value matches {
+									DV_BOOLEAN matches {*}
+								}
+							}
+							ELEMENT[at0010] matches {    -- Extensión_completa
+								value matches {
+									DV_BOOLEAN matches {*}
+								}
+							}
+							ELEMENT[at0011] matches {    -- Flexión_suficiente
+								value matches {
+									DV_BOOLEAN matches {*}
+								}
+							}
+							ELEMENT[at0012] matches {    -- Fuerza >70%
+								value matches {
+									DV_BOOLEAN matches {*}
+								}
+							}
+							ELEMENT[at0013] matches {    -- Ausencia_inflamación
+								value matches {
+									DV_BOOLEAN matches {*}
+								}
+							}
 						}
 					}
 				}
@@ -167,6 +171,10 @@ ontology
 				>
 				["at0019"] = <
 					text = <"Observaciones">
+					description = <"">
+				>
+				["at0020"] = <
+					text = <"Criterios cumplidos">
 					description = <"">
 				>
 			>

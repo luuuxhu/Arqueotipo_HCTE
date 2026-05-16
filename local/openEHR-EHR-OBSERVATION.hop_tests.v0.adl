@@ -23,7 +23,7 @@ description
 		["original_namespace"] = <"org.openehr">
 		["original_publisher"] = <"openEHR Foundation">
 		["custodian_namespace"] = <"org.openehr">
-		["MD5-CAM-1.0.1"] = <"b3977e69c6e931f3b181f427eb27a86b">
+		["MD5-CAM-1.0.1"] = <"ca355ab33a76775a4907b3f280675d2c">
 		["build_uid"] = <"b2be7aab-46ee-3769-a139-ae623a4bac34">
 	>
 
@@ -36,58 +36,61 @@ definition
 						data matches {
 							ITEM_TREE[at0003] matches {    -- Tree
 								items cardinality matches {0..*; unordered} matches {
-									ELEMENT[at0004] matches {    -- single_hop
-										value matches {
-											C_DV_QUANTITY <
-												property = <[openehr::122]>
-												list = <
-													["1"] = <
-														units = <"cm">
+									CLUSTER[at0011] occurrences matches {0..1} matches {    -- Resultado de prueba
+										items cardinality matches {1..*; unordered} matches {
+											ELEMENT[at0012] matches {    -- Tipo de prueba
+												value matches {
+													DV_CODED_TEXT matches {
+														defining_code matches {
+															[local::
+															at0013,    -- Single Hop
+															at0014,    -- Triple Hop
+															at0015,    -- Crossover Hop
+															at0016]    -- 6-meter Timed Hop
+														}
+													}
+												}
+											}
+											ELEMENT[at0017] matches {    -- Resultado lado operado
+												value matches {
+													C_DV_QUANTITY <
+														
+														list = <
+															["1"] = <
+																units = <"cm">
+																magnitude = <|0.0..500.0|>
+																precision = <|1|>
+															>
+															["2"] = <
+																units = <"s">
+															>
+														>
 													>
-												>
-											>
-										}
-									}
-									ELEMENT[at0005] matches {    -- triple_hop
-										value matches {
-											C_DV_QUANTITY <
-												property = <[openehr::122]>
-												list = <
-													["1"] = <
-														units = <"cm">
+												}
+											}
+											ELEMENT[at0018] matches {    -- Resultado lado sano
+												value matches {
+													C_DV_QUANTITY <
+														
+														list = <
+															["1"] = <
+																units = <"cm">
+																magnitude = <|0.0..500.0|>
+																precision = <|3|>
+															>
+															["2"] = <
+																units = <"s">
+															>
+														>
 													>
-												>
-											>
-										}
-									}
-									ELEMENT[at0008] matches {    -- crossover_hop
-										value matches {
-											C_DV_QUANTITY <
-												property = <[openehr::122]>
-												list = <
-													["1"] = <
-														units = <"cm">
-													>
-												>
-											>
-										}
-									}
-									ELEMENT[at0009] matches {    -- 6meter_timed_hop
-										value matches {
-											C_DV_QUANTITY <
-												property = <[openehr::128]>
-												list = <
-													["1"] = <
-														units = <"s">
-													>
-												>
-											>
-										}
-									}
-									ELEMENT[at0010] matches {    -- indice_simetria_global
-										value matches {
-											DV_PROPORTION matches {
-												precision matches {|1|}
+												}
+											}
+											ELEMENT[at0019] matches {    -- Índice de simetría LSI
+												value matches {
+													DV_PROPORTION matches {
+														precision matches {|1|}
+													}
+												}
 											}
 										}
 									}
@@ -123,29 +126,46 @@ ontology
 					text = <"Tree">
 					description = <"@ internal @">
 				>
-				["at0004"] = <
-					text = <"single_hop">
-					description = <"">
-				>
-				["at0005"] = <
-					text = <"triple_hop">
-					description = <"">
-				>
 				["at0006"] = <
 					text = <"Item tree">
 					description = <"@ internal @">
 				>
-				["at0008"] = <
-					text = <"crossover_hop">
+				["at0011"] = <
+					text = <"Resultado de prueba">
 					description = <"">
 				>
-				["at0009"] = <
-					text = <"6meter_timed_hop">
+				["at0012"] = <
+					text = <"Tipo de prueba">
+					description = <"Resultados de cada prueba funcional de salto realizada para evaluar la simetría de la extremidad operada.">
+				>
+				["at0013"] = <
+					text = <"Single Hop">
 					description = <"">
 				>
-				["at0010"] = <
-					text = <"indice_simetria_global">
-					description = <"umbral alta deportiva: ≥85% en todos">
+				["at0014"] = <
+					text = <"Triple Hop">
+					description = <"">
+				>
+				["at0015"] = <
+					text = <"Crossover Hop">
+					description = <"">
+				>
+				["at0016"] = <
+					text = <"6-meter Timed Hop">
+					description = <"">
+				>
+				["at0017"] = <
+					text = <"Resultado lado operado">
+					description = <"">
+				>
+				["at0018"] = <
+					text = <"Resultado lado sano">
+					description = <"">
+				>
+				["at0019"] = <
+					text = <"Índice de simetría LSI">
+					description = <"Porcentaje de simetría entre extremidad operada y sana.
+Umbral alta deportiva: ≥85% en todos">
 				>
 			>
 		>

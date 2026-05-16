@@ -1,0 +1,43 @@
+archetype (adl_version=1.4; uid=df0fa973-f9d3-4054-961e-3e02351ef6c4)
+	openEHR-EHR-EVALUATION.alta_deportiva.v0
+
+concept
+	[at0000]
+
+language
+	original_language = <[ISO_639-1::es]>
+
+description
+	original_author = <
+		["date"] = <"2026-05-15">
+	>
+	lifecycle_state = <"unmanaged">
+	details = <
+		["es"] = <
+			language = <[ISO_639-1::es]>
+		>
+	>
+	other_details = <
+		["licence"] = <"This work is licensed under the Creative Commons Attribution-ShareAlike 4.0 International License. To view a copy of this license, visit http://creativecommons.org/licenses/by-sa/4.0/.">
+		["custodian_organisation"] = <"openEHR Foundation">
+		["original_namespace"] = <"org.openehr">
+		["original_publisher"] = <"openEHR Foundation">
+		["custodian_namespace"] = <"org.openehr">
+		["MD5-CAM-1.0.1"] = <"3f2d8c1da545eb338232c551f40423f5">
+		["build_uid"] = <"9cac4b4e-8c02-31df-bd70-a8cf510830e8">
+	>
+
+definition
+	EVALUATION[at0000] matches {*}    -- alta_deportiva
+
+ontology
+	term_definitions = <
+		["es"] = <
+			items = <
+				["at0000"] = <
+					text = <"alta_deportiva">
+					description = <"Criterios_Progresion">
+				>
+			>
+		>
+	>

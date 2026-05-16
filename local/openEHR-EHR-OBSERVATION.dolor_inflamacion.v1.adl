@@ -25,7 +25,7 @@ description
 		["original_namespace"] = <"org.openehr">
 		["original_publisher"] = <"openEHR Foundation">
 		["custodian_namespace"] = <"org.openehr">
-		["MD5-CAM-1.0.1"] = <"8c63d0fe37e2b00643a3e720b01c34fb">
+		["MD5-CAM-1.0.1"] = <"cba0a31a2f73ba6c500752f0e2a93eee">
 		["build_uid"] = <"8eb312a6-f589-395f-baa4-17f24a02e3c5">
 	>
 
@@ -51,7 +51,7 @@ definition
 											>
 										}
 									}
-									ELEMENT[at0005] occurrences matches {0..1} matches {    -- Perímetro de la rodilla
+									ELEMENT[at0005] matches {    -- Perímetro de la rodilla
 										value matches {
 											C_DV_QUANTITY <
 												property = <[openehr::122]>

@@ -23,7 +23,7 @@ description
 		["original_namespace"] = <"org.openehr">
 		["original_publisher"] = <"openEHR Foundation">
 		["custodian_namespace"] = <"org.openehr">
-		["MD5-CAM-1.0.1"] = <"44391ec3b6e56480576fe293fc7f9042">
+		["MD5-CAM-1.0.1"] = <"5651447bedd8206c3a83253d087cab8c">
 		["build_uid"] = <"c2ef1409-2a31-334e-93cc-9131d3db37dc">
 	>
 
@@ -76,8 +76,8 @@ definition
 									at0016,    -- Lesión de menisco medial
 									at0017,    -- Lesión de menisco lateral
 									at0018,    -- Lesión de cartílago articular
-									at0019,    -- Ninguna
-									at0020]    -- Lesión multiligamentaria
+									at0020,    -- Lesión multiligamentaria
+									at0019]    -- Ninguna
 								}
 							}
 						}

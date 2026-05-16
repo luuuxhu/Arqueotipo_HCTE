@@ -23,16 +23,16 @@ description
 		["original_namespace"] = <"org.openehr">
 		["original_publisher"] = <"openEHR Foundation">
 		["custodian_namespace"] = <"org.openehr">
-		["MD5-CAM-1.0.1"] = <"309008dd4cdd54451006be8fab76b4dc">
+		["MD5-CAM-1.0.1"] = <"275fb3fa04d0fa931d54e262a77df772">
 		["build_uid"] = <"9cac4b4e-8c02-31df-bd70-a8cf510830e8">
 	>
 
 definition
-	EVALUATION[at0000] matches {    -- Criterios_Progresion
+	EVALUATION[at0000] matches {    -- Criterios de progresión
 		data matches {
 			ITEM_TREE[at0001] matches {    -- Item tree
 				items cardinality matches {0..*; unordered} matches {
-					ELEMENT[at0002] matches {    -- Fase_actual
+					ELEMENT[at0002] matches {    -- Fase actual
 						value matches {
 							DV_CODED_TEXT matches {
 								defining_code matches {
@@ -51,12 +51,12 @@ definition
 									DV_BOOLEAN matches {*}
 								}
 							}
-							ELEMENT[at0010] matches {    -- Extensión_completa
+							ELEMENT[at0010] matches {    -- Extensión completa
 								value matches {
 									DV_BOOLEAN matches {*}
 								}
 							}
-							ELEMENT[at0011] matches {    -- Flexión_suficiente
+							ELEMENT[at0011] matches {    -- Flexión suficiente
 								value matches {
 									DV_BOOLEAN matches {*}
 								}
@@ -66,7 +66,7 @@ definition
 									DV_BOOLEAN matches {*}
 								}
 							}
-							ELEMENT[at0013] matches {    -- Ausencia_inflamación
+							ELEMENT[at0013] matches {    -- Ausencia inflamación
 								value matches {
 									DV_BOOLEAN matches {*}
 								}
@@ -79,7 +79,7 @@ definition
 		protocol matches {
 			ITEM_TREE[at0014] matches {    -- Item tree
 				items cardinality matches {0..*; unordered} matches {
-					ELEMENT[at0015] matches {    -- Decisión_clínica
+					ELEMENT[at0015] matches {    -- Decisión clínica
 						value matches {
 							DV_CODED_TEXT matches {
 								defining_code matches {
@@ -106,7 +106,7 @@ ontology
 		["es"] = <
 			items = <
 				["at0000"] = <
-					text = <"Criterios_Progresion">
+					text = <"Criterios de progresión">
 					description = <"Criterios_Progresion">
 				>
 				["at0001"] = <
@@ -114,7 +114,7 @@ ontology
 					description = <"@ internal @">
 				>
 				["at0002"] = <
-					text = <"Fase_actual">
+					text = <"Fase actual">
 					description = <"">
 				>
 				["at0003"] = <
@@ -134,11 +134,11 @@ ontology
 					description = <"">
 				>
 				["at0010"] = <
-					text = <"Extensión_completa">
+					text = <"Extensión completa">
 					description = <"">
 				>
 				["at0011"] = <
-					text = <"Flexión_suficiente">
+					text = <"Flexión suficiente">
 					description = <"">
 				>
 				["at0012"] = <
@@ -146,7 +146,7 @@ ontology
 					description = <"">
 				>
 				["at0013"] = <
-					text = <"Ausencia_inflamación">
+					text = <"Ausencia inflamación">
 					description = <"">
 				>
 				["at0014"] = <
@@ -154,7 +154,7 @@ ontology
 					description = <"@ internal @">
 				>
 				["at0015"] = <
-					text = <"Decisión_clínica">
+					text = <"Decisión clínica">
 					description = <"">
 				>
 				["at0016"] = <

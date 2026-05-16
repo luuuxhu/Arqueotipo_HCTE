@@ -26,12 +26,12 @@ description
 		["original_namespace"] = <"org.openehr">
 		["original_publisher"] = <"openEHR Foundation">
 		["custodian_namespace"] = <"org.openehr">
-		["MD5-CAM-1.0.1"] = <"a6423f7f986f3ca77498a46ffb0748fc">
+		["MD5-CAM-1.0.1"] = <"0bf89fddbb266332d907d67d2e97054d">
 		["build_uid"] = <"c346df1a-9897-3bfb-a4ce-f4e8352f3696">
 	>
 
 definition
-	OBSERVATION[at0000] matches {    -- estabilidad_articular
+	OBSERVATION[at0000] matches {    -- Estabilidad articular
 		data matches {
 			HISTORY[at0001] matches {    -- History
 				events cardinality matches {1..*; unordered} matches {
@@ -102,7 +102,7 @@ ontology
 		["es"] = <
 			items = <
 				["at0000"] = <
-					text = <"estabilidad_articular">
+					text = <"Estabilidad articular">
 					description = <"range_of_motion_rodilla_lca">
 				>
 				["at0001"] = <

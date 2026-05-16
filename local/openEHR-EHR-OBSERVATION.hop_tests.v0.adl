@@ -23,12 +23,12 @@ description
 		["original_namespace"] = <"org.openehr">
 		["original_publisher"] = <"openEHR Foundation">
 		["custodian_namespace"] = <"org.openehr">
-		["MD5-CAM-1.0.1"] = <"0a2dccae15856674243ed857d67cd441">
+		["MD5-CAM-1.0.1"] = <"b3977e69c6e931f3b181f427eb27a86b">
 		["build_uid"] = <"b2be7aab-46ee-3769-a139-ae623a4bac34">
 	>
 
 definition
-	OBSERVATION[at0000] matches {    -- Hop_tests
+	OBSERVATION[at0000] matches {    -- Hop tests
 		data matches {
 			HISTORY[at0001] matches {    -- History
 				events cardinality matches {1..*; unordered} matches {
@@ -108,7 +108,7 @@ ontology
 		["es"] = <
 			items = <
 				["at0000"] = <
-					text = <"Hop_tests">
+					text = <"Hop tests">
 					description = <"Hop_tests">
 				>
 				["at0001"] = <

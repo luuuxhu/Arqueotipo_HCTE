@@ -23,7 +23,7 @@ description
 		["original_namespace"] = <"org.openehr">
 		["original_publisher"] = <"openEHR Foundation">
 		["custodian_namespace"] = <"org.openehr">
-		["MD5-CAM-1.0.1"] = <"c311cadc52ddbf1d68545c218f292791">
+		["MD5-CAM-1.0.1"] = <"42b68e89823f4d081214a0df4181a934">
 		["build_uid"] = <"a586b415-3bf0-3341-91f8-803c1575b858">
 	>
 
@@ -51,7 +51,7 @@ definition
 					DV_CODED_TEXT matches {*}
 				}
 			}
-			ELEMENT[at0009] occurrences matches {0..1} matches {    -- Deporte practicado
+			ELEMENT[at0009] occurrences matches {0..1} matches {    -- Deporte habitual
 				value matches {
 					DV_TEXT matches {*}
 				}
@@ -76,7 +76,7 @@ ontology
 					description = <"">
 				>
 				["at0009"] = <
-					text = <"Deporte practicado">
+					text = <"Deporte habitual">
 					description = <"">
 				>
 				["at0010"] = <

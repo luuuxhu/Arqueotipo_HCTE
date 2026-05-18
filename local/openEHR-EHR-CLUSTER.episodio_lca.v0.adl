@@ -23,19 +23,19 @@ description
 		["original_namespace"] = <"org.openehr">
 		["original_publisher"] = <"openEHR Foundation">
 		["custodian_namespace"] = <"org.openehr">
-		["MD5-CAM-1.0.1"] = <"e87379175d36ae65f8adaf123cf564ee">
+		["MD5-CAM-1.0.1"] = <"cd9b5fb1a32b5bb891abb864e65caaf7">
 		["build_uid"] = <"062b7392-60cd-3b6c-a1de-621d17067c72">
 	>
 
 definition
 	CLUSTER[at0000] matches {    -- Episodio LCA
 		items cardinality matches {1..*; unordered} matches {
-			ELEMENT[at0001] matches {    -- id_episodio
+			ELEMENT[at0001] matches {    -- ID episodio
 				value matches {
 					DV_IDENTIFIER matches {*}
 				}
 			}
-			ELEMENT[at0002] matches {    -- fecha_cirugia
+			ELEMENT[at0002] matches {    -- Fecha cirugía
 				value matches {
 					DV_DATE matches {*}
 				}
@@ -52,11 +52,11 @@ ontology
 					description = <"Datos específicos del episodio de rotura y reconstrucción del LCA">
 				>
 				["at0001"] = <
-					text = <"id_episodio">
+					text = <"ID episodio">
 					description = <"Identificador único del episodio de cuidado">
 				>
 				["at0002"] = <
-					text = <"fecha_cirugia">
+					text = <"Fecha cirugía">
 					description = <"Fecha de la reconstrucción del LCA">
 				>
 			>

@@ -23,7 +23,7 @@ description
 		["original_namespace"] = <"org.openehr">
 		["original_publisher"] = <"openEHR Foundation">
 		["custodian_namespace"] = <"org.openehr">
-		["MD5-CAM-1.0.1"] = <"5651447bedd8206c3a83253d087cab8c">
+		["MD5-CAM-1.0.1"] = <"2d7868b260dd8ae3ea7aab5a61ce878d">
 		["build_uid"] = <"c2ef1409-2a31-334e-93cc-9131d3db37dc">
 	>
 
@@ -68,7 +68,7 @@ definition
 							}
 						}
 					}
-					ELEMENT[at0015] occurrences matches {0..1} matches {    -- Lesiones asociadas tratadas
+					ELEMENT[at0015] matches {    -- Lesiones asociadas tratadas
 						value matches {
 							DV_CODED_TEXT matches {
 								defining_code matches {
@@ -82,7 +82,7 @@ definition
 							}
 						}
 					}
-					ELEMENT[at0021] occurrences matches {0..1} matches {    -- Complicaciones intraoperatorias
+					ELEMENT[at0021] matches {    -- Complicaciones intraoperatorias
 						value matches {
 							DV_CODED_TEXT matches {
 								defining_code matches {
